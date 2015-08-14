@@ -1,0 +1,16 @@
+﻿@model Radar.Models.LoginModel
+@{
+    ViewBag.Title = "My Todo List";
+}
+@functions{
+    public string GetAntiForgeryToken()
+    {
+        string cookieToken, formToken;
+        AntiForgery.GetTokens(null, out cookieToken, out formToken);
+        return cookieToken + ":" + formToken;                
+    }
+}
+<div id="main-content">
+    <div class="top-nav">  
+    </div>
+</div>
