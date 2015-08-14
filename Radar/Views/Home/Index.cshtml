@@ -13,6 +13,11 @@
 <div id="main-content">
     <div class="top-nav">
     </div>
+
+    <div data-ng-repeat="circle in circles">
+        <div id="{{circle.Name}}" class="circle"></div>
+    </div>
+
     <br />
-    <img id="radar" src="~/Images/radarImg.png" style="height: 86vh" />  
+    <img id="radar" src="~/Images/radarImg.png" style="height: 86vh" />
 </div>
