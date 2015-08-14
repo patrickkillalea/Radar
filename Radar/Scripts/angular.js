@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @license AngularJS v1.4.4
  * (c) 2010-2015 Google, Inc. http://angularjs.org
  * License: MIT
@@ -34,6 +34,7 @@
  *   error from returned function, for cases when a particular type of error is useful.
  * @returns {function(code:string, template:string, ...templateArgs): Error} minErr instance
  */
+
 
 function minErr(module, ErrorConstructor) {
   ErrorConstructor = ErrorConstructor || Error;
