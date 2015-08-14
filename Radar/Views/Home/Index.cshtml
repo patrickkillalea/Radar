@@ -7,12 +7,12 @@
     {
         string cookieToken, formToken;
         AntiForgery.GetTokens(null, out cookieToken, out formToken);
-        return cookieToken + ":" + formToken;                
+        return cookieToken + ":" + formToken;
     }
 }
 <div id="main-content">
-    <div class="top-nav">  
+    <div class="top-nav">
     </div>
     <br />
-    <img src="~/Images/radarImg.png" style="height:86vh" />
+    <img id="radar" src="~/Images/radarImg.png" style="height: 86vh" />  
 </div>
