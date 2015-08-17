@@ -4,10 +4,7 @@ angular.module('app', []).controller(controllerId, ['$scope', '$timeout', radarC
 
 function radarController($scope, $timeout) {
 
-    var radarTopLeft = { 'x': $("#radar").position().left, 'y': $("#radar").position().top };
-    var radarMiddle = { 'x': (radarTopLeft.x + $("#radar").width() / 2), 'y': (radarTopLeft.y + $("#radar").height() / 2) };
-    console.log(radarTopLeft);
-    console.log(radarMiddle);
+    var circleDiameter = 15;
 
     $scope.circles = [{ 'Name': 'Bootstrap', 'x': 50, 'y': 50 }, { 'Name': 'Bootstrap2', 'x': 10, 'y': 10 }]
 
@@ -46,15 +43,13 @@ function radarController($scope, $timeout) {
 
                         circle.x = ((Stoppos.left - radarTopLeft.x) / $("#radar").width()) * 100;
                         circle.y = ((Stoppos.top - radarTopLeft.y) / $("#radar").height()) * 100;
-                        console.log(circle);
                     }
                 });
 
                 calculateCirclePositions()
 
                 //creating a tooltip for each circle with it's name
-                Tipped.create("#" + circle.Name, circle.Name, { position: 'topleft' });
-                console.log(circle);
+                Tipped.create("#" + circle.Name, circle.Name, { position: 'topleft' }); 
             });
 
         });
@@ -71,6 +66,12 @@ function radarController($scope, $timeout) {
                 var circleY = radarTopLeft.y + (($("#radar").height() / 100) * circle.y);
 
                 $("#" + circle.Name).css({ top: circleY, left: circleX });
+
+                //Giving the circles a size depending on how big the window is
+                var circleSize = ($("#radar").width() / 722) * circleDiameter;
+
+                $("#" + circle.Name).css("width", circleSize);
+                $("#" + circle.Name).css("height", circleSize);
             });
         });
     }

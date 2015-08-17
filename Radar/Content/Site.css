@@ -271,8 +271,6 @@ footer {
 }
 
 .circle {
-    width: 15px;
-    height: 15px;
     background-color: white; 
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
