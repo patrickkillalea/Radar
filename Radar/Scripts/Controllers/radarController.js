@@ -3,6 +3,12 @@
 angular.module('app', []).controller(controllerId, ['$scope', '$timeout', radarController]);
 
 function radarController($scope, $timeout) {
+
+    var radarTopLeft = { 'x': $("#radar").position().left, 'y': $("#radar").position().top };
+    var radarMiddle = { 'x': (radarTopLeft.x + $("#radar").width() / 2), 'y': (radarTopLeft.y + $("#radar").height() / 2) };
+    console.log(radarTopLeft);
+    console.log(radarMiddle);
+
     $scope.circles = [{ 'Name': 'Bootstrap', 'x': 50, 'y': 50 }, { 'Name': 'Bootstrap2', 'x': 10, 'y': 10 }]
 
     makeCirclesDraggable()
@@ -14,7 +20,7 @@ function radarController($scope, $timeout) {
     //FUNCTIONS -------------------------------------------------------------------------------------------------------------------------------------
 
     $scope.createCircle = function () {
-        $scope.circles.push({ 'Name': $scope.circleName, 'x': 1000, 'y': 50 });
+        $scope.circles.push({ 'Name': $scope.circleName, 'x': 0, 'y': 0, 'CircleType': $scope.circleType, 'Website': $scope.website });
         makeCirclesDraggable()
     }
 
@@ -36,11 +42,15 @@ function radarController($scope, $timeout) {
                         var Stoppos = $(this).position();
 
                         //updating it's location
-                        circle.x = (Stoppos.left / $(window).width()) * 100;
-                        circle.y = (Stoppos.top / $(window).height()) * 100;
+                        var radarTopLeft = { 'x': $("#radar").position().left, 'y': $("#radar").position().top };
+
+                        circle.x = ((Stoppos.left - radarTopLeft.x) / $("#radar").width()) * 100;
+                        circle.y = ((Stoppos.top - radarTopLeft.y) / $("#radar").height()) * 100;
+                        console.log(circle);
                     }
                 });
-                $("#" + circle.Name).css({ top: ($(window).height() / 100) * circle.y, left: ($(window).width() / 100) * circle.x });
+
+                calculateCirclePositions()
 
                 //creating a tooltip for each circle with it's name
                 Tipped.create("#" + circle.Name, circle.Name, { position: 'topleft' });
@@ -50,11 +60,26 @@ function radarController($scope, $timeout) {
         });
     }
 
+    function calculateCirclePositions() {
+        $.each($scope.circles, function (index, circle) {
+            $timeout(function () { //Move code up the callstack to tell Angular to watch this  
+
+                //using the size and location of the radar image as a reference to position the circles. 
+                var radarTopLeft = { 'x': $("#radar").position().left, 'y': $("#radar").position().top };
+
+                var circleX = radarTopLeft.x + (($("#radar").width() / 100) * circle.x);
+                var circleY = radarTopLeft.y + (($("#radar").height() / 100) * circle.y);
+
+                $("#" + circle.Name).css({ top: circleY, left: circleX });
+            });
+        });
+    }
+
     //when the window resizes the circles will stay in the position they are meant to on the radar
     $(window).resize(function () {
         $.each($scope.circles, function (index, circle) {
             $timeout(function () {
-                $("#" + circle.Name).css({ top: ($(window).height() / 100) * circle.y, left: ($(window).width() / 100) * circle.x });
+                calculateCirclePositions()
             });
         });
     });

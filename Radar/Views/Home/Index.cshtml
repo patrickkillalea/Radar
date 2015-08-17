@@ -29,8 +29,20 @@
                         <h4 class="modal-title">Add New Item of Interest</h4>
                     </div>
                     <div class="modal-body" style="background: #5C616E; color: white">
-                        Name:
-                        <input type="text" class="form-control" data-ng-model="circleName">
+                        <label for="sel1">Name:</label>
+                        <input type="text" class="form-control" data-ng-model="circleName" />
+                        <br />
+                        <label for="sel1">Select Type:</label>
+                        <select class="form-control" id="sel1" data-ng-model="circleType">
+                            <option selected="selected" disabled>Select Value...</option>
+                            <option>Technologies</option>
+                            <option>Tools</option>
+                            <option>Platforms</option>
+                            <option>Languages & Frameworks</option>
+                        </select>
+                        <br />
+                        <label for="sel1">Website:</label> 
+                        <input type="text" class="form-control" data-ng-model="website">
                     </div>
                     <div class="modal-footer" style="background: #393F4F; color: white">
                         <button type="button" class="btn btn-success pull-right" data-dismiss="modal" data-ng-click="createCircle()">Save</button>
