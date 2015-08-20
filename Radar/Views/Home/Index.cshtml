@@ -13,6 +13,11 @@
 <div id="main-content">
     <div class="top-nav">
         <img src="~/Images/radaricon.png" style="width: 13vw; left: 10px; position:absolute" />
+        <div class="fa-align-center">
+            <form id="tfnewsearch" method="get" action="http://www.google.com">
+                <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+            </form>
+        </div>
     </div>
     <div style="position: absolute; left: 80vw;">
         <button style="border-top-left-radius: 0; border-top-right-radius: 0; box-shadow: 5px 5px 15px black;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></button>
@@ -84,10 +89,10 @@
                     </div>
                     <div class="modal-body" style="background: #5C616E; color: white">
                         <label>Type:  </label>
-                        {{clickedCircle.CircleType}}  
+                        {{clickedCircle.CircleType}}
                         <br />
                         <label>State:  </label>
-                        {{clickedCircle.State}}  
+                        {{clickedCircle.State}}
                         <br />
                         <label>Website:   </label>
                         <a style="color: aqua" href="http://{{clickedCircle.Website}}" target="_blank">{{clickedCircle.Website}}</a>
