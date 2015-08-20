@@ -14,9 +14,17 @@ function radarController($scope, $timeout) {
     var circleDiameter = 15;
     $scope.clickedCircle = 'poop';
 
-    $scope.circles = [{ 'Name': 'Bootstrap', 'x': 50, 'y': 50 }, { 'Name': 'Bootstrap2', 'x': 10, 'y': 10 }]
-    toastr["success"]("This happened", "PAGE LOADED")
-    makeCirclesDraggable()
+
+    /*
+    var testIndex = 0;
+
+    $scope.circles = [
+         { 'Name': 'Test' + (testIndex++).toString(), 'x': Math.floor((Math.random() * 95) + 1), 'y': Math.floor((Math.random() * 95) + 1), 'Website': 'www.google.com' },
+    ] */
+
+
+    //loading the circles from the XML file on startup
+    loadCircleXML();
 
     $('[data-toggle="tooltip"]').tooltip({
         placement: 'top'
@@ -27,11 +35,13 @@ function radarController($scope, $timeout) {
     $scope.createCircle = function () {
         $scope.circles.push({ 'Name': $scope.circleName, 'x': 0, 'y': 0, 'Website': $scope.website });
         makeCirclesDraggable()
+        $scope.saveCirclesXML();
     }
 
     $scope.editCircle = function () {
-        $scope.nameEdit = $scope.clickedCircle.Name; 
+        $scope.nameEdit = $scope.clickedCircle.Name;
         $scope.websiteEdit = $scope.clickedCircle.Website;
+        $scope.saveCirclesXML();
     }
 
     $scope.saveEdit = function () {
@@ -39,10 +49,11 @@ function radarController($scope, $timeout) {
         $scope.clickedCircle.CircleType = $scope.typeEdit;
         $scope.clickedCircle.Website = $scope.websiteEdit;
 
-        makeCirclesDraggable()
+        makeCirclesDraggable();
+        $scope.saveCirclesXML();
     }
 
-    function makeCirclesDraggable() {
+    function makeCirclesDraggable() { 
         $.each($scope.circles, function (index, circle) {
 
             calculateCirclePositions(circle)
@@ -69,48 +80,65 @@ function radarController($scope, $timeout) {
 
                         //working out distance of the circle from the centre and then assigning the state of the circle depending where it is dropped
                         findCircleRealPosition(circle);
+                        catagorize(circle, true);
 
-                        var distanceFromCentre = Math.sqrt(Math.pow((circle.realX - radarMiddle.x), 2) + Math.pow((circle.realY - radarMiddle.y), 2));
-                        var percentOfRadius = (distanceFromCentre / ($("#radar").width() / 2)) * 100;
-
-                        var stateBefore = circle.State;
-
-                        if (percentOfRadius <= 27.6) {
-                            circle.State = 'Adopt';
-                        }
-                        else if (percentOfRadius > 27.6 && percentOfRadius <= 49.7) {
-                            circle.State = 'Trial';
-                        }
-                        else if (percentOfRadius > 49.7 && percentOfRadius <= 72.9) {
-                            circle.State = 'Assess';
-                        }
-                        else if (percentOfRadius > 72.9 && percentOfRadius <= 95.3) {
-                            circle.State = 'Hold';
-                        }
-
-                        //if there is a change in state, display it on the screen using TOASTR
-                        if (circle.State != stateBefore) {
-                            toastr["success"]("State changed to: " + circle.State, circle.Name);
-                        }
-
-                        //When you drop the circle will know what type it has been dropped into and store that type
-                        if (circle.realX < radarMiddle.x && circle.realY < radarMiddle.y)
-                            circle.CircleType = 'Techniques';
-                        else if (circle.realX > radarMiddle.x && circle.realY < radarMiddle.y)
-                            circle.CircleType = 'Tools';
-                        else if (circle.realX > radarMiddle.x && circle.realY > radarMiddle.y)
-                            circle.CircleType = 'Languages & Frameworks';
-                        else if (circle.realX > radarMiddle.x && circle.realY > radarMiddle.y)
-                            circle.CircleType = 'Platforms';
+                        //saving the change made to the circle
+                        $scope.saveCirclesXML();
                     }
                 });
 
                 //creating a tooltip for each circle with it's name
                 Tipped.create("#" + circle.Name, circle.Name, { position: 'topleft' });
             });
-
-        });
+        }); 
     }
+
+    function catagorize(circle, notifications) {
+        var distanceFromCentre = Math.sqrt(Math.pow((circle.realX - radarMiddle.x), 2) + Math.pow((circle.realY - radarMiddle.y), 2));
+        var percentOfRadius = (distanceFromCentre / ($("#radar").width() / 2)) * 100;
+
+        var stateBefore = circle.State;
+
+        if (percentOfRadius <= 27.6) {
+            circle.State = 'Adopt';
+        }
+        else if (percentOfRadius > 27.6 && percentOfRadius <= 49.7) {
+            circle.State = 'Trial';
+        }
+        else if (percentOfRadius > 49.7 && percentOfRadius <= 72.9) {
+            circle.State = 'Assess';
+        }
+        else if (percentOfRadius > 72.9 && percentOfRadius <= 95.3) {
+            circle.State = 'Hold';
+        }
+
+        //if there is a change in state, display it on the screen using TOASTR
+        if (circle.State != stateBefore) {
+            if (notifications)
+                toastr["success"]("State changed to: " + circle.State, circle.Name);
+        }
+
+        $("#" + circle.Name).css('color', 'red');
+
+        //When you drop the circle will know what type it has been dropped into and store that type
+        if (circle.realX < radarMiddle.x && circle.realY < radarMiddle.y) {
+            circle.CircleType = 'Techniques';
+            $("#" + circle.Name).css('background-color', '#00A7D4');
+        }
+        else if (circle.realX > radarMiddle.x && circle.realY < radarMiddle.y) {
+            circle.CircleType = 'Tools';
+            $("#" + circle.Name).css('background-color', '#D04F4F');
+        }
+        else if (circle.realX > radarMiddle.x && circle.realY > radarMiddle.y) {
+            circle.CircleType = 'Languages & Frameworks';
+            $("#" + circle.Name).css('background-color', '#81B245');
+        }
+        else if (circle.realX < radarMiddle.x && circle.realY > radarMiddle.y) {
+            circle.CircleType = 'Platforms';
+            $("#" + circle.Name).css('background-color', '#FF7F50');
+        }
+    }
+
 
     function calculateCirclePositions(circle) {
         $timeout(function () { //Move code up the callstack to tell Angular to watch this  
@@ -125,6 +153,8 @@ function radarController($scope, $timeout) {
 
             $("#" + circle.Name).css("width", circleSize);
             $("#" + circle.Name).css("height", circleSize);
+
+            catagorize(circle, false);
         });
     }
 
@@ -137,7 +167,7 @@ function radarController($scope, $timeout) {
         var circleY = radarTopLeft.y + (($("#radar").height() / 100) * circle.y);
 
         circle.realX = circleX;
-        circle.realY = circleY; 
+        circle.realY = circleY;
     }
 
     //opening modal on double click to display info about circle
@@ -148,30 +178,34 @@ function radarController($scope, $timeout) {
 
     //when the window resizes the circles will stay in the position they are meant to on the radar
     $(window).resize(function () {
-        $.each($scope.circles, function (index, circle) {
-            $timeout(function () {
-                makeCirclesDraggable();
-            });
+        $timeout(function () {
+            makeCirclesDraggable();
         });
     });
 
+    $scope.saveCirclesXML = function () {
+        $.ajax({
+            type: "POST",
+            url: "Home/WriteXML",
+            data: { circles: JSON.stringify($scope.circles) },
+            dataType: 'json',
+            success: function (data) {
+                //do stuff
+                console.log(data);
+            }
+        });
+    }
 
-
-
-    /*
-    $("#radar").draggable({
-        // Find original position of dragged image.
-        start: function (event, ui) {
-            // Show start dragged position of image.
-            var Startpos = $(this).position();
-            console.log(Startpos);
-        },
-        // Find position where image is dropped.
-        stop: function (event, ui) {
-
-            // Show dropped position.
-            var Stoppos = $(this).position();
-            console.log(Stoppos);
-        }
-    });*/
+    function loadCircleXML() {
+        $.ajax({
+            type: "POST",
+            url: "Home/LoadXML",
+            data: {},
+            dataType: 'json',
+            success: function (data) {
+                $scope.circles = data;
+                makeCirclesDraggable();
+            }
+        });
+    }
 };

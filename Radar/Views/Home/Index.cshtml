@@ -1,6 +1,6 @@
 ﻿@model Radar.Models.LoginModel
 @{
-    ViewBag.Title = "My Todo List";
+    ViewBag.Title = "Radar";
 }
 @functions{
     public string GetAntiForgeryToken()
@@ -12,12 +12,14 @@
 }
 <div id="main-content">
     <div class="top-nav">
+        <img src="~/Images/radaricon.png" style="width: 13vw; left: 10px; position:absolute" />
     </div>
-
+    <div style="position: absolute; left: 80vw;">
+        <button style="border-top-left-radius: 0; border-top-right-radius: 0; box-shadow: 5px 5px 15px black;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></button>
+        <button style="border-top-left-radius: 0; border-top-right-radius: 0; box-shadow: 5px 5px 15px black;" type="button" class="btn btn-warning btn-lg"><i class="fa fa-bars"></i></button>
+    </div>
     <div class="container">
         <!-- Trigger the modal with a button -->
-        <button style="position: absolute; top: 10vh; left: 80vw" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">New Item</button>
-
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
@@ -30,7 +32,7 @@
                     </div>
                     <div class="modal-body" style="background: #5C616E; color: white">
                         <label for="sel1">Name:</label>
-                        <input type="text" class="form-control" data-ng-model="circleName" /> 
+                        <input type="text" class="form-control" data-ng-model="circleName" />
                         <br />
                         <label for="sel1">Website:</label>
                         <input type="text" class="form-control" data-ng-model="website">
@@ -52,11 +54,11 @@
                 <div class="modal-content">
                     <div class="modal-header" style="background: #393F4F; color: white">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"> Edit {{clickedCircle.Name}}</h4>
+                        <h4 class="modal-title">Edit {{clickedCircle.Name}}</h4>
                     </div>
                     <div class="modal-body" style="background: #5C616E; color: white">
                         <label for="sel1">Name:</label>
-                        <input type="text" class="form-control" data-ng-model="nameEdit" /> 
+                        <input type="text" class="form-control" data-ng-model="nameEdit" />
                         <br />
                         <label for="sel1">Website:</label>
                         <input type="text" class="form-control" data-ng-model="websiteEdit">
@@ -80,12 +82,15 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{clickedCircle.Name}}</h4>
                     </div>
-                    <div class="modal-body" style="background: #5C616E; color: white"> 
-                        <label>Type:  </label>  {{clickedCircle.CircleType}}  
+                    <div class="modal-body" style="background: #5C616E; color: white">
+                        <label>Type:  </label>
+                        {{clickedCircle.CircleType}}  
                         <br />
-                        <label>State:  </label>  {{clickedCircle.State}}  
+                        <label>State:  </label>
+                        {{clickedCircle.State}}  
                         <br />
-                        <label>Website:   </label> <a style="color: aqua" href="http://{{clickedCircle.Website}}"  target="_blank">{{clickedCircle.Website}}</a>  
+                        <label>Website:   </label>
+                        <a style="color: aqua" href="http://{{clickedCircle.Website}}" target="_blank">{{clickedCircle.Website}}</a>
                         <br />
 
 
