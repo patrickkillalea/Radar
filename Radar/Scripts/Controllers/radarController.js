@@ -65,7 +65,7 @@ function radarController($scope, $timeout) {
 
     function makeCirclesDraggable() {
         $.each($scope.circles, function (index, circle) {
-            calculateCirclePositions(circle)
+            calculateCirclePositions(index, circle)
 
             $timeout(function () { //Move code up the callstack to tell Angular to watch this 
                 //makes the circle draggable as well logging the position it is lifted from and where it is dropped to the console
@@ -75,11 +75,17 @@ function radarController($scope, $timeout) {
                         // Show start dragged position of circle.
                         var Startpos = $(this).position();
 
+                        $("#bin").fadeIn();
+
                         circle.startX = Startpos.left;
                         circle.startY = Startpos.top;
                     },
                     // Find position where circle is dropped.
                     stop: function (event, ui) {
+
+                        $timeout(function () {
+                            $("#bin").fadeOut();
+                        }, 1000);
 
                         // Show dropped position.
                         var Stoppos = $(this).position();
@@ -90,7 +96,7 @@ function radarController($scope, $timeout) {
 
                         //working out distance of the circle from the centre and then assigning the state of the circle depending where it is dropped
                         findCircleRealPosition(circle);
-                        catagorize(circle, true);
+                        catagorize(index, circle, true);
 
                         //saving the change made to the circle
                         $scope.saveCirclesXML();
@@ -103,9 +109,14 @@ function radarController($scope, $timeout) {
         });
     }
 
-    function catagorize(circle, notifications) {
+    function catagorize(index, circle, notifications) {
         var distanceFromCentre = Math.sqrt(Math.pow((circle.realX - radarMiddle.x), 2) + Math.pow((circle.realY - radarMiddle.y), 2));
         var percentOfRadius = (distanceFromCentre / ($("#radar").width() / 2)) * 100;
+
+        var binLeft = $("#bin").position().left;
+        var binWidth = binLeft + $("#bin").width();
+        var binTop = $("#bin").position().top;
+        var binHeight = binTop + $("#bin").height(); 
 
         var stateBefore = circle.State;
 
@@ -120,6 +131,11 @@ function radarController($scope, $timeout) {
         }
         else if (percentOfRadius > 72.9 && percentOfRadius <= 96) {
             circle.State = 'Hold';
+        }
+        else if (circle.realX > binLeft && circle.realX < binWidth
+         && circle.realY > binTop && circle.realY < binHeight) {
+            deleteCircle(index);
+
         }
         else if (percentOfRadius > 96 && circle.startX != null && circle.startY != null) {
             $("#" + circle.Name).css('left', circle.startX);
@@ -159,8 +175,12 @@ function radarController($scope, $timeout) {
         }
     }
 
+    //if dropped on the bin, remove the circle from the array
+    function deleteCircle(index) {
+        $scope.circles.splice(index, 1);
+    }
 
-    function calculateCirclePositions(circle) {
+    function calculateCirclePositions(index, circle) {
         $timeout(function () { //Move code up the callstack to tell Angular to watch this  
 
             //using the size and location of the radar image as a reference to position the circles. 
@@ -174,7 +194,7 @@ function radarController($scope, $timeout) {
             $("#" + circle.Name).css("width", circleSize);
             $("#" + circle.Name).css("height", circleSize);
 
-            catagorize(circle, false);
+            catagorize(index, circle, false);
         });
     }
 
@@ -185,7 +205,6 @@ function radarController($scope, $timeout) {
 
         var circleX = radarTopLeft.x + (($("#radar").width() / 100) * circle.x);
         var circleY = radarTopLeft.y + (($("#radar").height() / 100) * circle.y);
-
         circle.realX = circleX;
         circle.realY = circleY;
     }
@@ -229,16 +248,16 @@ function radarController($scope, $timeout) {
         });
     }
 
-    function sortCircleNames(circle, array, type) {
+    function sortCircles(circle, array, type) {
         if (circle.CircleType == type) {
             if (circle.State == 'Adopt')
-                array.Adopt.push(circle.Name);
+                array.Adopt.push(circle);
             else if (circle.State == 'Trial')
-                array.Trial.push(circle.Name);
+                array.Trial.push(circle);
             else if (circle.State == 'Assess')
-                array.Assess.push(circle.Name);
+                array.Assess.push(circle);
             else if (circle.State == 'Hold')
-                array.Hold.push(circle.Name);
+                array.Hold.push(circle);
         }
     }
 
@@ -246,10 +265,10 @@ function radarController($scope, $timeout) {
 
         console.log('test');
         $.each($scope.circles, function (index, circle) {
-            sortCircleNames(circle, $scope.techniques, 'Techniques');
-            sortCircleNames(circle, $scope.tools, 'Tools');
-            sortCircleNames(circle, $scope.laf, 'Languages & Frameworks');
-            sortCircleNames(circle, $scope.platforms, 'Platforms');
+            sortCircles(circle, $scope.techniques, 'Techniques');
+            sortCircles(circle, $scope.tools, 'Tools');
+            sortCircles(circle, $scope.laf, 'Languages & Frameworks');
+            sortCircles(circle, $scope.platforms, 'Platforms');
         });
     }
 
@@ -258,7 +277,6 @@ function radarController($scope, $timeout) {
         $.each($scope.circles, function (index, circle) {
             $scope.circleNames.push(circle.Name);
         });
-        console.log($scope.circleNames);
     }
 
     //will highlight the circle for a time before return to normal

@@ -300,6 +300,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Images\bin.png" />
     <Content Include="Images\radarImg.png" />
     <Content Include="Images\radarMiniIcon.ico" />
     <Content Include="Images\radarIcon.png" />

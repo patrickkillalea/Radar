@@ -31,21 +31,9 @@
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
-    <Name>Test5</Name>
-    <x>39.233512593029147</x>
-    <y>33.659343767047226</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
     <Name>Test6</Name>
-    <x>44.799601800554015</x>
-    <y>51.385041551246537</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test7</Name>
-    <x>66.505799861495845</x>
-    <y>60.342364958448755</y>
+    <x>44.79902842990181</x>
+    <y>51.384128180525245</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -62,8 +50,8 @@
   </Circle>
   <Circle>
     <Name>Test10</Name>
-    <x>82</x>
-    <y>33</y>
+    <x>81.999864839853487</x>
+    <y>32.999102433126168</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -80,8 +68,8 @@
   </Circle>
   <Circle>
     <Name>Test13</Name>
-    <x>23</x>
-    <y>39</y>
+    <x>22.998062095737222</x>
+    <y>38.999725874522682</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -134,14 +122,8 @@
   </Circle>
   <Circle>
     <Name>Test22</Name>
-    <x>5.7695637119113572</x>
-    <y>36.74904778393352</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test23</Name>
-    <x>84.7966905246649</x>
-    <y>73.654844517125156</y>
+    <x>5.7689980675752022</x>
+    <y>36.7484076064721</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -158,8 +140,8 @@
   </Circle>
   <Circle>
     <Name>Test26</Name>
-    <x>19.680574792243767</x>
-    <y>31.485889889196677</y>
+    <x>21.549854611518079</x>
+    <y>32.356178492976547</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -182,8 +164,8 @@
   </Circle>
   <Circle>
     <Name>Test30</Name>
-    <x>34.305747922437675</x>
-    <y>39.335180055401665</y>
+    <x>34.304429051882011</x>
+    <y>39.333094266287404</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -211,12 +193,6 @@
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
-    <Name>Test35</Name>
-    <x>74</x>
-    <y>74</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
     <Name>Test36</Name>
     <x>29.17243767313019</x>
     <y>88.22931094182826</y>
@@ -230,20 +206,8 @@
   </Circle>
   <Circle>
     <Name>Test38</Name>
-    <x>92.276229224376721</x>
-    <y>44.427371883656505</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test39</Name>
-    <x>32</x>
-    <y>68</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test40</Name>
-    <x>42.60084833795014</x>
-    <y>10.413781163434903</y>
+    <x>82.049651871298309</x>
+    <y>54.15064937753273</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -272,20 +236,14 @@
   </Circle>
   <Circle>
     <Name>Test45</Name>
-    <x>14.692261080332411</x>
-    <y>73.48943905817174</y>
+    <x>14.69199924992207</x>
+    <y>73.488162223834934</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
     <Name>Test46</Name>
-    <x>19</x>
-    <y>55</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test47</Name>
-    <x>40</x>
-    <y>77</y>
+    <x>18.999810349614247</x>
+    <y>54.999224503438668</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -296,8 +254,8 @@
   </Circle>
   <Circle>
     <Name>Test49</Name>
-    <x>60</x>
-    <y>84</y>
+    <x>59.999742769540987</x>
+    <y>83.997906235388086</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -332,8 +290,8 @@
   </Circle>
   <Circle>
     <Name>Test55</Name>
-    <x>6.1050034626038778</x>
-    <y>38.93481648199446</y>
+    <x>5.481086407516365</x>
+    <y>40.43060835460178</y>
     <Website>www.ign.com</Website>
   </Circle>
   <Circle>
@@ -343,21 +301,9 @@
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
-    <Name>Test57</Name>
-    <x>82</x>
-    <y>64</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test58</Name>
-    <x>16.832583102493075</x>
-    <y>27.510387811634352</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
     <Name>Test59</Name>
-    <x>42</x>
-    <y>61</y>
+    <x>41.997872445351462</x>
+    <y>60.999844139650875</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -386,8 +332,8 @@
   </Circle>
   <Circle>
     <Name>Test64</Name>
-    <x>95</x>
-    <y>52</y>
+    <x>94.999044137702612</x>
+    <y>51.998912782740412</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -452,14 +398,14 @@
   </Circle>
   <Circle>
     <Name>Test75</Name>
-    <x>82</x>
-    <y>40</y>
+    <x>69.279925187032418</x>
+    <y>44.987362221886691</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
     <Name>Test76</Name>
-    <x>8</x>
-    <y>54</y>
+    <x>8.3709983159776353</x>
+    <y>54.871503492245942</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -470,20 +416,20 @@
   </Circle>
   <Circle>
     <Name>Test78</Name>
-    <x>10.586911357340719</x>
-    <y>67.57487880886427</y>
+    <x>10.585516646615883</x>
+    <y>67.574121946111291</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
     <Name>Test79</Name>
-    <x>76</x>
-    <y>28</y>
+    <x>74.626802744116276</x>
+    <y>30.990235288244232</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
     <Name>Test80</Name>
-    <x>47</x>
-    <y>43</y>
+    <x>46.998386906269488</x>
+    <y>42.997977620645649</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -502,12 +448,6 @@
     <Name>Test83</Name>
     <x>39</x>
     <y>77</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test84</Name>
-    <x>64</x>
-    <y>81</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -530,32 +470,32 @@
   </Circle>
   <Circle>
     <Name>Test88</Name>
-    <x>56.323580332409975</x>
-    <y>53.601108033241</y>
+    <x>57.192087530197945</x>
+    <y>51.977265089230052</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
     <Name>Test89</Name>
-    <x>6</x>
-    <y>55</y>
+    <x>5.9984582915270419</x>
+    <y>54.999224503438668</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
     <Name>Test90</Name>
-    <x>5</x>
-    <y>63</y>
+    <x>5.6217945127415829</x>
+    <y>64.368162844841024</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
     <Name>Test91</Name>
-    <x>70.56137465373962</x>
-    <y>42.95792936288089</y>
+    <x>68.437845510734888</x>
+    <y>55.549062219938442</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
     <Name>Test92</Name>
-    <x>51</x>
-    <y>57</y>
+    <x>65.461346633416468</x>
+    <y>52.635341273281647</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -574,12 +514,6 @@
     <Name>Test95</Name>
     <x>59</x>
     <y>27</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test96</Name>
-    <x>87</x>
-    <y>40</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>

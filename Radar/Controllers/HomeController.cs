@@ -40,17 +40,13 @@ namespace Radar.Controllers
         {
             var path = AppDomain.CurrentDomain.BaseDirectory + "Storage\\savedCircles.xml";
 
-            Console.WriteLine("Reading with TextReader");
-
             // Create an instance of the XmlSerializer specifying type.
-            XmlSerializer serializer =
-            new XmlSerializer(typeof(List<Circle>));
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Circle>));
 
             // Create a TextReader to read the file. 
             FileStream fs = new FileStream(path, FileMode.OpenOrCreate);
             TextReader reader = new StreamReader(fs);
             
-
             // Declare an object variable of the type to be deserialized.
             List<Circle> c;
 
@@ -58,9 +54,9 @@ namespace Radar.Controllers
             c = (List<Circle>)serializer.Deserialize(reader);
             fs.Close();
 
-            var json = new JavaScriptSerializer().Serialize(c); 
+            var circleData = new JavaScriptSerializer().Serialize(c); 
 
-            return json;
+            return circleData;
         }
     }
 }

@@ -123,13 +123,18 @@
             </div>
 
         </div>
-
+        
+        <img id="bin" src="~/Images/bin.png" style="position: absolute; top:87vh; left:85vw; width: 12vh" hidden />
 
         <div data-ng-repeat="circle in circles">
             <div data-ng-dblclick="openInfoModal(circle)" id="{{circle.Name}}" class="circle"></div>
         </div>
 
         <br />
-        <img id="radar" src="~/Images/radarImg.png" style="height: 86vh" />
+        <img id="radar" src="~/Images/radarImg.png" style="height: 86vh" />        
     </div>
+    <div id="circleList">
+
+    </div>
+
 </div>
