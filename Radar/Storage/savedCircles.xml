@@ -194,8 +194,8 @@
   </Circle>
   <Circle>
     <Name>Test32</Name>
-    <x>58</x>
-    <y>33</y>
+    <x>55.558580139372829</x>
+    <y>32.649172473867594</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -368,8 +368,8 @@
   </Circle>
   <Circle>
     <Name>Test61</Name>
-    <x>46</x>
-    <y>16</y>
+    <x>46.689895470383277</x>
+    <y>16.604965156794425</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -581,5 +581,12 @@
     <x>87</x>
     <y>40</y>
     <Website>www.google.com</Website>
+  </Circle>
+  <Circle>
+    <Name>DTest</Name>
+    <x>24.686544137702619</x>
+    <y>11.594278616203631</y>
+    <Website>www.google.com</Website>
+    <Description>This is a test description</Description>
   </Circle>
 </ArrayOfCircle>

@@ -16,5 +16,7 @@ namespace Radar.Models
         public double y { get; set; }
         [XmlElement]
         public string Website { get; set; }
+        [XmlElement]
+        public string Description { get; set; }
     }
 }

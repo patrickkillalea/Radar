@@ -41,7 +41,7 @@ function radarController($scope, $timeout) {
     //FUNCTIONS -------------------------------------------------------------------------------------------------------------------------------------
 
     $scope.createCircle = function () {
-        $scope.circles.push({ 'Name': $scope.circleName.replace(/ /g, "_"), 'x': 0, 'y': 0, 'Website': $scope.website });
+        $scope.circles.push({ 'Name': $scope.circleName.replace(/ /g, "_"), 'x': 0, 'y': 0, 'Website': $scope.website, 'Description': $scope.description });
         makeCirclesDraggable()
         listAllNames();
     }
@@ -49,12 +49,14 @@ function radarController($scope, $timeout) {
     $scope.editCircle = function () {
         $scope.nameEdit = $scope.clickedCircle.Name;
         $scope.websiteEdit = $scope.clickedCircle.Website;
+        $scope.descriptionEdit = $scope.clickedCircle.Description;
     }
 
     $scope.saveEdit = function () {
         $scope.clickedCircle.Name = $scope.clickedCircle.Name.replace(/ /g, "_");
         $scope.clickedCircle.CircleType = $scope.typeEdit;
         $scope.clickedCircle.Website = $scope.websiteEdit;
+        $scope.clickedCircle.Description = $scope.descriptionEdit;
 
         makeCirclesDraggable();
         $scope.saveCirclesXML();
@@ -209,7 +211,6 @@ function radarController($scope, $timeout) {
             data: { circles: JSON.stringify($scope.circles) },
             dataType: 'json',
             success: function (data) {
-                //do stuff
             }
         });
     }

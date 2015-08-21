@@ -46,6 +46,9 @@
                             <br />
                             <label for="sel1">Website:</label>
                             <input type="text" class="form-control" data-ng-model="website">
+                            <br />
+                            <label for="sel1">Description:</label>
+                            <textarea class="form-control" rows="5" data-ng-model="description"></textarea>
                         </div>
                         <div class="modal-footer" style="background: #393F4F; color: white">
                             <button type="button" class="btn btn-success pull-right" data-dismiss="modal" data-ng-click="createCircle()">Save</button>
@@ -72,6 +75,8 @@
                             <br />
                             <label for="sel1">Website:</label>
                             <input type="text" class="form-control" data-ng-model="websiteEdit">
+                            <label for="sel1">Description:</label>
+                            <textarea class="form-control" rows="5" data-ng-model="descriptionEdit"></textarea>
                         </div>
                         <div class="modal-footer" style="background: #393F4F; color: white">
                             <button type="button" class="btn btn-success pull-right" data-dismiss="modal" data-ng-click="saveEdit()">Save</button>
@@ -102,6 +107,9 @@
                             <label>Website:   </label>
                             <a style="color: aqua" href="http://{{clickedCircle.Website}}" target="_blank">{{clickedCircle.Website}}</a>
                             <br />
+                            <label>Description:  </label>
+                            {{clickedCircle.Description}}
+                        <br />
 
 
                         </div>
