@@ -2,8 +2,8 @@
 <ArrayOfCircle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Circle>
     <Name>Test0</Name>
-    <x>56</x>
-    <y>3</y>
+    <x>56.2317037470726</x>
+    <y>2.9969262295081966</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -26,8 +26,8 @@
   </Circle>
   <Circle>
     <Name>Test4</Name>
-    <x>29</x>
-    <y>9</y>
+    <x>38.971606648199447</x>
+    <y>20.494286703601109</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -116,8 +116,8 @@
   </Circle>
   <Circle>
     <Name>Test19</Name>
-    <x>59</x>
-    <y>23</y>
+    <x>64.53860803324099</x>
+    <y>20.228099030470915</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -242,8 +242,8 @@
   </Circle>
   <Circle>
     <Name>Test40</Name>
-    <x>39</x>
-    <y>10</y>
+    <x>42.60084833795014</x>
+    <y>10.413781163434903</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>
@@ -320,8 +320,8 @@
   </Circle>
   <Circle>
     <Name>Test53</Name>
-    <x>44</x>
-    <y>9</y>
+    <x>33.334054709141277</x>
+    <y>6.5053670360110809</y>
     <Website>www.google.com</Website>
   </Circle>
   <Circle>

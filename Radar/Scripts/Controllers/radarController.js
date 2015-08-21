@@ -3,12 +3,20 @@
 angular.module('app', []).controller(controllerId, ['$scope', '$timeout', radarController]);
 
 function radarController($scope, $timeout) {
+    $scope.circleNames = [];
+
+    //used for listing the different technologies
+    $scope.tools = { 'Hold': [], 'Assess': [], 'Trial': [], 'Adopt': [] };
+    $scope.techniques = { 'Hold': [], 'Assess': [], 'Trial': [], 'Adopt': [] };
+    $scope.laf = { 'Hold': [], 'Assess': [], 'Trial': [], 'Adopt': [] };
+    $scope.platforms = { 'Hold': [], 'Assess': [], 'Trial': [], 'Adopt': [] };
 
     //setting the location of the toaster notifications 
     toastr.options = {
         "positionClass": "toast-bottom-right",
     }
 
+    var radarTopLeft = { 'x': $("#radar").position().left, 'y': $("#radar").position().top };
     var radarMiddle = { 'x': $("#radar").position().left + ($("#radar").width() / 2), 'y': $("#radar").position().top + ($("#radar").height() / 2) };
 
     var circleDiameter = 15;
@@ -33,29 +41,28 @@ function radarController($scope, $timeout) {
     //FUNCTIONS -------------------------------------------------------------------------------------------------------------------------------------
 
     $scope.createCircle = function () {
-        $scope.circles.push({ 'Name': $scope.circleName, 'x': 0, 'y': 0, 'Website': $scope.website });
+        $scope.circles.push({ 'Name': $scope.circleName.replace(/ /g, "_"), 'x': 0, 'y': 0, 'Website': $scope.website });
         makeCirclesDraggable()
-        $scope.saveCirclesXML();
+        listAllNames();
     }
 
     $scope.editCircle = function () {
         $scope.nameEdit = $scope.clickedCircle.Name;
         $scope.websiteEdit = $scope.clickedCircle.Website;
-        $scope.saveCirclesXML();
     }
 
     $scope.saveEdit = function () {
-        $scope.clickedCircle.Name = $scope.nameEdit;
+        $scope.clickedCircle.Name = $scope.clickedCircle.Name.replace(/ /g, "_");
         $scope.clickedCircle.CircleType = $scope.typeEdit;
         $scope.clickedCircle.Website = $scope.websiteEdit;
 
         makeCirclesDraggable();
         $scope.saveCirclesXML();
+        listAllNames();
     }
 
-    function makeCirclesDraggable() { 
+    function makeCirclesDraggable() {
         $.each($scope.circles, function (index, circle) {
-
             calculateCirclePositions(circle)
 
             $timeout(function () { //Move code up the callstack to tell Angular to watch this 
@@ -65,6 +72,9 @@ function radarController($scope, $timeout) {
                     start: function (event, ui) {
                         // Show start dragged position of circle.
                         var Startpos = $(this).position();
+
+                        circle.startX = Startpos.left;
+                        circle.startY = Startpos.top;
                     },
                     // Find position where circle is dropped.
                     stop: function (event, ui) {
@@ -73,8 +83,6 @@ function radarController($scope, $timeout) {
                         var Stoppos = $(this).position();
 
                         //updating it's location
-                        var radarTopLeft = { 'x': $("#radar").position().left, 'y': $("#radar").position().top };
-
                         circle.x = ((Stoppos.left - radarTopLeft.x) / $("#radar").width()) * 100;
                         circle.y = ((Stoppos.top - radarTopLeft.y) / $("#radar").height()) * 100;
 
@@ -86,11 +94,11 @@ function radarController($scope, $timeout) {
                         $scope.saveCirclesXML();
                     }
                 });
-
+                Tipped.remove("#" + circle.Name, circle.Name, { position: 'topleft' })
                 //creating a tooltip for each circle with it's name
                 Tipped.create("#" + circle.Name, circle.Name, { position: 'topleft' });
             });
-        }); 
+        });
     }
 
     function catagorize(circle, notifications) {
@@ -108,8 +116,17 @@ function radarController($scope, $timeout) {
         else if (percentOfRadius > 49.7 && percentOfRadius <= 72.9) {
             circle.State = 'Assess';
         }
-        else if (percentOfRadius > 72.9 && percentOfRadius <= 95.3) {
+        else if (percentOfRadius > 72.9 && percentOfRadius <= 96) {
             circle.State = 'Hold';
+        }
+        else if (percentOfRadius > 96 && circle.startX != null && circle.startY != null) {
+            $("#" + circle.Name).css('left', circle.startX);
+            $("#" + circle.Name).css('top', circle.startY);
+            circle.realX = circle.startX;
+            circle.realY = circle.startY;
+            circle.x = ((circle.realX - radarTopLeft.x) / $("#radar").width()) * 100;
+            circle.y = ((circle.realY - radarTopLeft.y) / $("#radar").height()) * 100;
+            toastr["error"]("Cannot move the circle outside the radar");
         }
 
         //if there is a change in state, display it on the screen using TOASTR
@@ -118,24 +135,25 @@ function radarController($scope, $timeout) {
                 toastr["success"]("State changed to: " + circle.State, circle.Name);
         }
 
-        $("#" + circle.Name).css('color', 'red');
-
         //When you drop the circle will know what type it has been dropped into and store that type
-        if (circle.realX < radarMiddle.x && circle.realY < radarMiddle.y) {
-            circle.CircleType = 'Techniques';
-            $("#" + circle.Name).css('background-color', '#00A7D4');
-        }
-        else if (circle.realX > radarMiddle.x && circle.realY < radarMiddle.y) {
-            circle.CircleType = 'Tools';
-            $("#" + circle.Name).css('background-color', '#D04F4F');
-        }
-        else if (circle.realX > radarMiddle.x && circle.realY > radarMiddle.y) {
-            circle.CircleType = 'Languages & Frameworks';
-            $("#" + circle.Name).css('background-color', '#81B245');
-        }
-        else if (circle.realX < radarMiddle.x && circle.realY > radarMiddle.y) {
-            circle.CircleType = 'Platforms';
-            $("#" + circle.Name).css('background-color', '#FF7F50');
+        if (circle.x != 0 && circle.y != 0) {
+
+            if (circle.realX < radarMiddle.x && circle.realY < radarMiddle.y) {
+                circle.CircleType = 'Techniques';
+                $("#" + circle.Name).css('background-color', '#00A7D4');
+            }
+            else if (circle.realX > radarMiddle.x && circle.realY < radarMiddle.y) {
+                circle.CircleType = 'Tools';
+                $("#" + circle.Name).css('background-color', '#D04F4F');
+            }
+            else if (circle.realX > radarMiddle.x && circle.realY > radarMiddle.y) {
+                circle.CircleType = 'Languages & Frameworks';
+                $("#" + circle.Name).css('background-color', '#81B245');
+            }
+            else if (circle.realX < radarMiddle.x && circle.realY > radarMiddle.y) {
+                circle.CircleType = 'Platforms';
+                $("#" + circle.Name).css('background-color', '#FF7F50');
+            }
         }
     }
 
@@ -179,6 +197,7 @@ function radarController($scope, $timeout) {
     //when the window resizes the circles will stay in the position they are meant to on the radar
     $(window).resize(function () {
         $timeout(function () {
+            radarTopLeft = { 'x': $("#radar").position().left, 'y': $("#radar").position().top };
             makeCirclesDraggable();
         });
     });
@@ -191,7 +210,6 @@ function radarController($scope, $timeout) {
             dataType: 'json',
             success: function (data) {
                 //do stuff
-                console.log(data);
             }
         });
     }
@@ -204,8 +222,73 @@ function radarController($scope, $timeout) {
             dataType: 'json',
             success: function (data) {
                 $scope.circles = data;
+                listAllNames();
                 makeCirclesDraggable();
             }
         });
     }
+
+    function sortCircleNames(circle, array, type) {
+        if (circle.CircleType == type) {
+            if (circle.State == 'Adopt')
+                array.Adopt.push(circle.Name);
+            else if (circle.State == 'Trial')
+                array.Trial.push(circle.Name);
+            else if (circle.State == 'Assess')
+                array.Assess.push(circle.Name);
+            else if (circle.State == 'Hold')
+                array.Hold.push(circle.Name);
+        }
+    }
+
+    $scope.orderForList = function () {
+
+        console.log('test');
+        $.each($scope.circles, function (index, circle) {
+            sortCircleNames(circle, $scope.techniques, 'Techniques');
+            sortCircleNames(circle, $scope.tools, 'Tools');
+            sortCircleNames(circle, $scope.laf, 'Languages & Frameworks');
+            sortCircleNames(circle, $scope.platforms, 'Platforms');
+        });
+    }
+
+    //used for search bar at top of page
+    function listAllNames() {
+        $.each($scope.circles, function (index, circle) {
+            $scope.circleNames.push(circle.Name);
+        });
+        console.log($scope.circleNames);
+    }
+
+    //will highlight the circle for a time before return to normal
+    $scope.highlightCircle = function (name) {
+        $("#searchBar").css('display', 'none');
+        var circleSize = ($("#radar").width() / 722) * circleDiameter;
+
+        var storedColor = $("#" + name).css('background-color');
+        var storedSize = circleSize;
+
+        startHighlight(name, circleSize);
+
+        $timeout(function () {
+            $("#" + name).css('background-color', storedColor);
+            $("#" + name).css("width", storedSize);
+            $("#" + name).css("height", storedSize);
+        }, 5000);
+    }
+
+    function startHighlight(name, circleSize) {
+        $("#" + name).css('background-color', 'yellow');
+        $("#" + name).css("width", circleSize + 5);
+        $("#" + name).css("height", circleSize + 5);
+    }
+
+    $scope.showResults = function () {
+        $("#searchBar").css('display', 'block');
+    }
+
+    $('#radarContent').click(function () {
+        $("#searchBar").css('display', 'none');
+    });
+
 };
