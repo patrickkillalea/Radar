@@ -23,119 +23,201 @@
             </form>
         </div>
     </div>
-    <div id="radarContent">
-        <div style="position: absolute; left: 80vw;">
-            <button style="border-top-left-radius: 0; border-top-right-radius: 0; box-shadow: 5px 5px 15px black;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></button>
-            <button style="border-top-left-radius: 0; border-top-right-radius: 0; box-shadow: 5px 5px 15px black;" type="button" class="btn btn-warning btn-lg" data-ng-click="orderForList()"><i class="fa fa-bars"></i></button>
+
+    <div id="circleList" style="color: white" hidden>
+        <div class="col-md-3 customList" style="text-align: left;">
+            <h2>Techniques </h2>
+            <h3>Hold</h3>
+            <ul>
+                <li data-ng-repeat="circle in techniques.Hold"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+            <h3>Assess</h3>
+            <ul>
+                <li data-ng-repeat="circle in techniques.Assess"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+            <h3>Trial</h3>
+            <ul>
+                <li data-ng-repeat="circle in techniques.Trial"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+            <h3>Adopt</h3>
+            <ul>
+                <li data-ng-repeat="circle in techniques.Adopt"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
         </div>
+
+        <div class="col-md-3 customList" style="text-align: left">
+            <h2>Tools </h2>
+            <h3>Hold</h3>
+            <ul>
+                <li data-ng-repeat="circle in tools.Hold"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+            <h3>Assess</h3>
+            <ul>
+                <li data-ng-repeat="circle in tools.Assess"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+            <h3>Trial</h3>
+            <ul>
+                <li data-ng-repeat="circle in tools.Trial"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+            <h3>Adopt</h3>
+            <ul>
+                <li data-ng-repeat="circle in tools.Adopt"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+        </div>
+
+        <div class="col-md-3 customList" style="text-align: left">
+            <h2>Frameworks </h2>
+            <h3>Hold</h3>
+            <ul>
+                <li data-ng-repeat="circle in laf.Hold"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+            <h3>Assess</h3>
+            <ul>
+                <li data-ng-repeat="circle in laf.Assess"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+            <h3>Trial</h3>
+            <ul>
+                <li data-ng-repeat="circle in laf.Trial"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+            <h3>Adopt</h3>
+            <ul>
+                <li data-ng-repeat="circle in laf.Adopt"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+        </div>
+
+        <div class="col-md-3 customList" style="text-align: left">
+            <h2>Platforms </h2>
+            <h3>Hold</h3>
+            <ul>
+                <li data-ng-repeat="circle in platforms.Hold"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+            <h3>Assess</h3>
+            <ul>
+                <li data-ng-repeat="circle in platforms.Assess"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+            <h3>Trial</h3>
+            <ul>
+                <li data-ng-repeat="circle in platforms.Trial"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+            <h3>Adopt</h3>
+            <ul>
+                <li data-ng-repeat="circle in platforms.Adopt"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div style="position: absolute; left: 80vw;">
+        <button data-ng-show="radarVisible" style="border-top-left-radius: 0; border-top-right-radius: 0; box-shadow: 5px 5px 15px black;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></button>
+        <button data-ng-show="radarVisible" style="border-top-left-radius: 0; border-top-right-radius: 0; box-shadow: 5px 5px 15px black;" type="button" class="btn btn-warning btn-lg" data-ng-click="orderForList()"><i class="fa fa-bars"></i></button>
+        <button data-ng-hide="radarVisible" style="border-top-left-radius: 0; border-top-right-radius: 0; box-shadow: 5px 5px 15px black;" type="button" class="btn btn-warning btn-lg" data-ng-click="orderForList()"><i class="fa fa-times"></i></button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="background: #393F4F; color: white">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add New Item of Interest</h4>
+                </div>
+                <div class="modal-body" style="background: #5C616E; color: white">
+                    <label for="sel1">Name:</label>
+                    <input type="text" class="form-control" data-ng-model="circleName" />
+                    <br />
+                    <label for="sel1">Website:</label>
+                    <input type="text" class="form-control" data-ng-model="website">
+                    <br />
+                    <label for="sel1">Description:</label>
+                    <textarea class="form-control" rows="5" data-ng-model="description"></textarea>
+                </div>
+                <div class="modal-footer" style="background: #393F4F; color: white">
+                    <button type="button" class="btn btn-success pull-right" data-dismiss="modal" data-ng-click="createCircle()">Save</button>
+                    <button type="button" class="btn btn-warning pull-left" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="editModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="background: #393F4F; color: white">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Edit {{clickedCircle.Name}}</h4>
+                </div>
+                <div class="modal-body" style="background: #5C616E; color: white">
+                    <label for="sel1">Name:</label>
+                    <input type="text" class="form-control" data-ng-model="nameEdit" />
+                    <br />
+                    <label for="sel1">Website:</label>
+                    <input type="text" class="form-control" data-ng-model="websiteEdit">
+                    <label for="sel1">Description:</label>
+                    <textarea class="form-control" rows="5" data-ng-model="descriptionEdit"></textarea>
+                </div>
+                <div class="modal-footer" style="background: #393F4F; color: white">
+                    <button type="button" class="btn btn-success pull-right" data-dismiss="modal" data-ng-click="saveEdit()">Save</button>
+                    <button type="button" class="btn btn-warning pull-left" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for INFO -->
+    <div class="modal fade" id="infoModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="background: #393F4F; color: white">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{clickedCircle.Name}}</h4>
+                </div>
+                <div class="modal-body" style="background: #5C616E; color: white">
+                    <label>Type:  </label>
+                    {{clickedCircle.CircleType}}
+                        <br />
+                    <label>State:  </label>
+                    {{clickedCircle.State}}
+                        <br />
+                    <label>Website:   </label>
+                    <a style="color: aqua" href="http://{{clickedCircle.Website}}" target="_blank">{{clickedCircle.Website}}</a>
+                    <br />
+                    <label>Description:  </label>
+                    {{clickedCircle.Description}}
+                        <br />
+
+
+                </div>
+                <div class="modal-footer" style="background: #393F4F; color: white">
+                    <button type="button" class="btn btn-success pull-right" data-dismiss="modal" data-toggle="modal" data-target="#editModal" data-ng-click="editCircle()">Edit</button>
+                    <button type="button" class="btn btn-warning pull-left" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="radarContent">
         <div class="container">
             <!-- Trigger the modal with a button -->
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header" style="background: #393F4F; color: white">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Add New Item of Interest</h4>
-                        </div>
-                        <div class="modal-body" style="background: #5C616E; color: white">
-                            <label for="sel1">Name:</label>
-                            <input type="text" class="form-control" data-ng-model="circleName" />
-                            <br />
-                            <label for="sel1">Website:</label>
-                            <input type="text" class="form-control" data-ng-model="website">
-                            <br />
-                            <label for="sel1">Description:</label>
-                            <textarea class="form-control" rows="5" data-ng-model="description"></textarea>
-                        </div>
-                        <div class="modal-footer" style="background: #393F4F; color: white">
-                            <button type="button" class="btn btn-success pull-right" data-dismiss="modal" data-ng-click="createCircle()">Save</button>
-                            <button type="button" class="btn btn-warning pull-left" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="editModal" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header" style="background: #393F4F; color: white">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Edit {{clickedCircle.Name}}</h4>
-                        </div>
-                        <div class="modal-body" style="background: #5C616E; color: white">
-                            <label for="sel1">Name:</label>
-                            <input type="text" class="form-control" data-ng-model="nameEdit" />
-                            <br />
-                            <label for="sel1">Website:</label>
-                            <input type="text" class="form-control" data-ng-model="websiteEdit">
-                            <label for="sel1">Description:</label>
-                            <textarea class="form-control" rows="5" data-ng-model="descriptionEdit"></textarea>
-                        </div>
-                        <div class="modal-footer" style="background: #393F4F; color: white">
-                            <button type="button" class="btn btn-success pull-right" data-dismiss="modal" data-ng-click="saveEdit()">Save</button>
-                            <button type="button" class="btn btn-warning pull-left" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Modal for INFO -->
-            <div class="modal fade" id="infoModal" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header" style="background: #393F4F; color: white">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">{{clickedCircle.Name}}</h4>
-                        </div>
-                        <div class="modal-body" style="background: #5C616E; color: white">
-                            <label>Type:  </label>
-                            {{clickedCircle.CircleType}}
-                        <br />
-                            <label>State:  </label>
-                            {{clickedCircle.State}}
-                        <br />
-                            <label>Website:   </label>
-                            <a style="color: aqua" href="http://{{clickedCircle.Website}}" target="_blank">{{clickedCircle.Website}}</a>
-                            <br />
-                            <label>Description:  </label>
-                            {{clickedCircle.Description}}
-                        <br />
-
-
-                        </div>
-                        <div class="modal-footer" style="background: #393F4F; color: white">
-                            <button type="button" class="btn btn-success pull-right" data-dismiss="modal" data-toggle="modal" data-target="#editModal" data-ng-click="editCircle()">Edit</button>
-                            <button type="button" class="btn btn-warning pull-left" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
         </div>
-        
-        <img id="bin" src="~/Images/bin.png" style="position: absolute; top:87vh; left:85vw; width: 12vh" hidden />
+
+        <img id="bin" src="~/Images/bin.png" style="position: absolute; top: 87vh; left: 85vw; width: 12vh" hidden />
 
         <div data-ng-repeat="circle in circles">
             <div data-ng-dblclick="openInfoModal(circle)" id="{{circle.Name}}" class="circle"></div>
         </div>
 
         <br />
-        <img id="radar" src="~/Images/radarImg.png" style="height: 86vh" />        
-    </div>
-
-    <div id="circleList">
-
-    </div>
+        <img id="radar" src="~/Images/radarImg.png" style="height: 86vh" />
+    </div>   
 
 </div>

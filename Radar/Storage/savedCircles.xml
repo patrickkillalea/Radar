@@ -1,520 +1,255 @@
 <?xml version="1.0"?>
 <ArrayOfCircle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Circle>
-    <Name>Test0</Name>
-    <x>56.2317037470726</x>
-    <y>2.9969262295081966</y>
-    <Website>www.google.com</Website>
+    <Name>Pair_Programming</Name>
+    <x>18.952184662854581</x>
+    <y>16.70736564959671</y>
+    <Website>www.pairprogramming.com</Website>
+    <Description>Pair programming (sometimes referred to as peer programming) is an agile software development technique in which two programmers work as a pair together on one workstation. One, the driver, writes code while the other, the observer, pointer or navigator, reviews each line of code as it is typed in.</Description>
   </Circle>
   <Circle>
-    <Name>Test1</Name>
-    <x>32.04639889196676</x>
-    <y>78.486409279778385</y>
-    <Website>www.google.com</Website>
+    <Name>IOS_Accessibility</Name>
+    <x>26.931366956144792</x>
+    <y>27.680368019161083</y>
+    <Website>www.apple.com</Website>
+    <Description>Understanding Accessibility on iOS. From the beginning, iOS-based devices included several features that made the device easy for everyone</Description>
   </Circle>
   <Circle>
-    <Name>Test2</Name>
-    <x>17.878483417920044</x>
-    <y>41.588739028892611</y>
-    <Website>www.google.com</Website>
+    <Name>IOS_Adaptivity</Name>
+    <x>39.025703867771981</x>
+    <y>32.167844700991658</y>
+    <Website>www.apple.com</Website>
+    <Description>Adaptive UI is meant to help rationalize a world with multiple devices, and let developers use a single storyboard in Interface builder to target different aspect ratios, screen sizes, orientations, and display densities.</Description>
   </Circle>
   <Circle>
-    <Name>Test3</Name>
-    <x>74.965373961218845</x>
-    <y>60.991603185595565</y>
-    <Website>www.google.com</Website>
+    <Name>Build_Pipelines</Name>
+    <x>21.569337155158976</x>
+    <y>37.404322445838531</y>
+    <Website>www.buildpipelines.com</Website>
+    <Description>A deployment pipeline is a way to deal with this by breaking up your build into stages. Each stage provides increasing confidence, usually at the cost of extra time.</Description>
   </Circle>
   <Circle>
-    <Name>Test4</Name>
-    <x>38.971606648199447</x>
-    <y>20.494286703601109</y>
-    <Website>www.google.com</Website>
+    <Name>Polygot_Programming</Name>
+    <x>40.482564341100371</x>
+    <y>43.658218954566706</y>
+    <Website>www.polygotprogramming.com</Website>
+    <Description>In computing, a polyglot is a computer program or script written in a valid form of multiple programming languages, which performs the same operations or output independent of the programming language used to compile or interpret it.</Description>
   </Circle>
   <Circle>
-    <Name>Test6</Name>
-    <x>44.79902842990181</x>
-    <y>51.384128180525245</y>
-    <Website>www.google.com</Website>
+    <Name>Load_Balancing</Name>
+    <x>31.755411331955564</x>
+    <y>40.829790832865662</y>
+    <Website>www.loadbalancing.com</Website>
+    <Description>A load balancer is a device that acts as a reverse proxy and distributes network or application traffic across a number of servers. Load balancers are used to increase capacity (concurrent users) and reliability of applications.</Description>
   </Circle>
   <Circle>
-    <Name>Test8</Name>
-    <x>58.78852146814404</x>
-    <y>21.152181440443211</y>
-    <Website>www.google.com</Website>
+    <Name>Code_Reviews</Name>
+    <x>45.134561971536</x>
+    <y>39.151255923910924</y>
+    <Website>www.codereviews.com</Website>
+    <Description>Code review is systematic examination (often known as peer review) of computer source code. It is intended to find and fix mistakes overlooked in the initial development phase, improving both the overall quality of software and the developers' skills.</Description>
   </Circle>
   <Circle>
-    <Name>Test9</Name>
-    <x>35</x>
-    <y>15</y>
-    <Website>www.google.com</Website>
+    <Name>Git_Flow</Name>
+    <x>38.1533120933019</x>
+    <y>19.950126590871452</y>
+    <Website>www.github.com</Website>
+    <Description>GitFlow is a branching model for Git, created by Vincent Driessen. It has attracted a lot of attention because it is very well suited to collaboration and scaling the development team.</Description>
   </Circle>
   <Circle>
-    <Name>Test10</Name>
-    <x>81.999864839853487</x>
-    <y>32.999102433126168</y>
-    <Website>www.google.com</Website>
+    <Name>LeanKit</Name>
+    <x>52.117973194455267</x>
+    <y>39.6491414590964</y>
+    <Website>www.leankit.com</Website>
+    <Description>LeanKit is a visual project delivery tool that enables teams of all types and across all levels of the organization to apply Lean management principles to their work. Whatever workflow methodology you use — including Kanban, Scrum, Waterfall and anything in between — we help you remove waste and continuously improve.</Description>
   </Circle>
   <Circle>
-    <Name>Test11</Name>
-    <x>23.863833102493075</x>
-    <y>81.5356648199446</y>
-    <Website>www.google.com</Website>
+    <Name>Trello</Name>
+    <x>62.218583789549562</x>
+    <y>35.2850516835353</y>
+    <Website>www.trello.com</Website>
+    <Description>A Trello board is a list of lists, filled with cards, used by you and your team. It's a lot more than that, though. Trello has everything you need to organize projects of any size. Open a card and you can add comments, upload file attachments, create checklists, add labels and due dates, and more.</Description>
   </Circle>
   <Circle>
-    <Name>Test12</Name>
-    <x>54.341144514202774</x>
+    <Name>MongoBD</Name>
+    <x>76.057689029379674</x>
+    <y>16.33286702068072</y>
+    <Website>www.mongodb.org</Website>
+    <Description>MongoDB is a document database that provides high performance, high availability, and easy scalability. Document Database. Documents (objects) map nicely to programming language data types. Embedded documents and arrays reduce need for joins. Dynamic schema makes polymorphism easier.</Description>
+  </Circle>
+  <Circle>
+    <Name>GitHub</Name>
+    <x>55.984169824462285</x>
+    <y>42.142910850315616</y>
+    <Website>www.github.com</Website>
+    <Description>GitHub is a Web-based Git repository hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features.</Description>
+  </Circle>
+  <Circle>
+    <Name>TFS</Name>
+    <x>58.726885788458539</x>
+    <y>45.883559229367989</y>
+    <Website>www.visualstudio.com</Website>
+    <Description>Team Foundation Server (commonly abbreviated to TFS) is a Microsoft product which provides source code management (either via Team Foundation Version Control or Git), reporting, requirements management, project management (for both agile software development and waterfall teams), automated builds, lab management</Description>
+  </Circle>
+  <Circle>
+    <Name>Xamarin</Name>
+    <x>71.693599253818576</x>
+    <y>28.927250812178539</y>
+    <Website>www.xamarin.com</Website>
+    <Description>Xamarin is a San Francisco, California based software company created in May 2011 by the engineers that created Mono, MonoTouch and Mono for Android which are cross-platform implementations of the Common Language Infrastructure (CLI) and Common Language Specifications (often called Microsoft .NET).</Description>
+  </Circle>
+  <Circle>
+    <Name>Articulate_Storyline</Name>
+    <x>55.858621573507641</x>
+    <y>18.203191210206903</y>
+    <Website>www.articulate.com</Website>
+    <Description>Easily create any interactive course you can imagine with Articulate Storyline 2, the only e-learning authoring software that grows with you.</Description>
+  </Circle>
+  <Circle>
+    <Name>Visio</Name>
+    <x>57.854494013988464</x>
+    <y>45.88139407949852</y>
+    <Website>www.visio.com</Website>
+    <Description>Microsoft Visio is a diagramming and vector graphics application and is part of the Microsoft Office family. The product was first introduced in 1992, made by the Shapeware corporation. It was acquired by Microsoft in 2000.</Description>
+  </Circle>
+  <Circle>
+    <Name>Biztalk</Name>
+    <x>78.6726725666303</x>
     <y>42.140745700446153</y>
-    <Website>www.google.com</Website>
+    <Website>www.msdn.com</Website>
+    <Description>BizTalk is an industry initiative headed by Microsoft to promote Extensible Markup Language (XML) as the common data exchange language for e-commerce and application integration on the Internet. While not a standards body per se, the group is fostering a common XML message-passing architecture to tie systems together.</Description>
   </Circle>
   <Circle>
-    <Name>Test13</Name>
-    <x>22.998062095737222</x>
-    <y>38.999725874522682</y>
-    <Website>www.google.com</Website>
+    <Name>Service_Now</Name>
+    <x>39.151252118726617</x>
+    <y>52.117973194455267</y>
+    <Website>www.servicenow.com</Website>
+    <Description>A portfolio of products to boost efficiency. ServiceNow is changing the way people work. By placing a service-oriented lens on the activities, tasks and processes that make up day-to-day work life, we help the modern enterprise operate faster, better and more scalable than ever before.</Description>
   </Circle>
   <Circle>
-    <Name>Test14</Name>
-    <x>19</x>
-    <y>63</y>
-    <Website>www.google.com</Website>
+    <Name>Workday</Name>
+    <x>46.38360610923862</x>
+    <y>57.854501624357077</y>
+    <Website>www.workday.com</Website>
+    <Description>Workday, Inc. is an on‑demand (cloud-based) financial management and human capital management software vendor. It was founded by David Duffield, the founder and former CEO of the ERP giant PeopleSoft, and former PeopleSoft chief strategist Aneel Bhusri following Oracle's hostile takeover of PeopleSoft in 2005.</Description>
   </Circle>
   <Circle>
-    <Name>Test15</Name>
-    <x>64</x>
-    <y>27</y>
-    <Website>www.google.com</Website>
+    <Name>TFS</Name>
+    <x>40.768303240921135</x>
+    <y>54.611738780490185</y>
+    <Website>www.microsoft.com</Website>
+    <Description>Team Foundation Server (commonly abbreviated to TFS) is a Microsoft product which provides source code management (either via Team Foundation Version Control or Git), reporting, requirements management, project management (for both agile software development and waterfall teams), automated builds, lab management</Description>
   </Circle>
   <Circle>
-    <Name>Test16</Name>
-    <x>87</x>
-    <y>35</y>
-    <Website>www.google.com</Website>
+    <Name>.NET</Name>
+    <x>0</x>
+    <y>0</y>
+    <Website>www.microsoft.com</Website>
+    <Description>.NET Framework (pronounced dot net) is a software framework developed by Microsoft that runs primarily on Microsoft Windows.</Description>
   </Circle>
   <Circle>
-    <Name>Test17</Name>
-    <x>46</x>
-    <y>94</y>
-    <Website>www.google.com</Website>
+    <Name>DotNET</Name>
+    <x>57.480002995441083</x>
+    <y>51.869026621678231</y>
+    <Website>www.microsoft.com</Website>
+    <Description>.NET Framework (pronounced dot net) is a software framework developed by Microsoft that runs primarily on Microsoft Windows.</Description>
   </Circle>
   <Circle>
-    <Name>Test18</Name>
-    <x>70.5310768698061</x>
-    <y>22.20178324099723</y>
-    <Website>www.google.com</Website>
+    <Name>Java</Name>
+    <x>52.866962841918642</x>
+    <y>56.356507108693108</y>
+    <Website>www.java.com</Website>
+    <Description>Java is a programming language expressly designed for use in the distributed environment of the Internet. It was designed to have the "look and feel" of the C++ language, but it is simpler to use than C++ and enforces an object-oriented programming model.</Description>
   </Circle>
   <Circle>
-    <Name>Test19</Name>
-    <x>64.53860803324099</x>
-    <y>20.228099030470915</y>
-    <Website>www.google.com</Website>
+    <Name>My_SQL</Name>
+    <x>34.787162343165519</x>
+    <y>61.967479677271662</y>
+    <Website>www.mysql.com</Website>
+    <Description>MySQL is a relational database management system (RDBMS); in July 2013, it was the world's second most [a] widely used RDBMS, and the most widely used open-source RDBMS.</Description>
   </Circle>
   <Circle>
-    <Name>Test20</Name>
-    <x>75</x>
-    <y>70</y>
-    <Website>www.google.com</Website>
+    <Name>QualityCentre</Name>
+    <x>11.843221383796369</x>
+    <y>66.457125314156016</y>
+    <Website>http://www8.hp.com/us/en/software-solutions/quality-center-quality-management/</Website>
+    <Description>HP Quality Center is quality management software offered from the HP Software Division of Hewlett-Packard with many capabilities acquired from Mercury Interactive Corporation.</Description>
   </Circle>
   <Circle>
-    <Name>Test21</Name>
-    <x>61</x>
-    <y>30</y>
-    <Website>www.google.com</Website>
+    <Name>VisualStudio_2015</Name>
+    <x>67.704008107173479</x>
+    <y>53.613798755065453</y>
+    <Website>www.visualstudio.com</Website>
+    <Description>Microsoft Visual Studio is an integrated development environment (IDE) from Microsoft. It is used to develop computer programs for Microsoft Windows, as well as web sites, web applications and web services.</Description>
   </Circle>
   <Circle>
-    <Name>Test22</Name>
-    <x>7.3730582905529136</x>
-    <y>42.731713654097177</y>
-    <Website>www.google.com</Website>
+    <Name>TFS_2015</Name>
+    <x>18.703241895261847</x>
+    <y>53.364855987472723</y>
+    <Website>www.visualstudio.com</Website>
+    <Description>Microsoft Visual Studio is an integrated development environment (IDE) from Microsoft. It is used to develop computer programs for Microsoft Windows, as well as web sites, web applications and web services.</Description>
   </Circle>
   <Circle>
-    <Name>Test24</Name>
-    <x>46.346952908587255</x>
-    <y>28.852146814404435</y>
-    <Website>www.google.com</Website>
+    <Name>Apache</Name>
+    <x>25.4355413955346</x>
+    <y>69.076446761514191</y>
+    <Website>www.apache.com</Website>
+    <Description>Apache is a freely available Web server that is distributed under an "open source" license. Version 2.0 runs on most UNIX-based operating systems (such as Linux, Solaris, Digital UNIX, and AIX), on other UNIX/POSIX-derived systems (such as Rhapsody, BeOS, and BS2000/OSD), on AmigaOS, and on Windows 2000.</Description>
   </Circle>
   <Circle>
-    <Name>Test25</Name>
-    <x>85</x>
-    <y>30</y>
-    <Website>www.google.com</Website>
+    <Name>MacOS</Name>
+    <x>42.642957730186254</x>
+    <y>79.300451873246573</y>
+    <Website>www.apple.com</Website>
+    <Description>Mac OS is a series of graphical user interface–based operating systems developed by Apple Inc. for their Macintosh line of computer systems. The original operating system was first introduced in 1984 as being integral to the original Macintosh, and referred to as the "System".</Description>
   </Circle>
   <Circle>
-    <Name>Test26</Name>
-    <x>21.549854611518079</x>
-    <y>32.356178492976547</y>
-    <Website>www.google.com</Website>
+    <Name>Linux</Name>
+    <x>28.301644265800341</x>
+    <y>85.28592307074112</y>
+    <Website>www.linux.com</Website>
+    <Description>An open-source operating system modelled on UNIX.</Description>
   </Circle>
   <Circle>
-    <Name>Test27</Name>
-    <x>60.457063711911353</x>
-    <y>62.865737534626042</y>
-    <Website>www.google.com</Website>
+    <Name>DjangoRest</Name>
+    <x>90.522397010403679</x>
+    <y>56.607618831339622</y>
+    <Website>www.djangoproject.com</Website>
+    <Description>Django is a free and open source web application framework, written in Python. A web framework is a set of components that helps you to develop websites faster and easier.</Description>
   </Circle>
   <Circle>
-    <Name>Test28</Name>
-    <x>15.127250692520775</x>
-    <y>20.15451869806094</y>
-    <Website>www.google.com</Website>
+    <Name>EmberJS</Name>
+    <x>70.572272322124377</x>
+    <y>69.201995012468828</y>
+    <Website>www.emberjs.com</Website>
+    <Description>emberjs.com. Free software portal. Ember.js is an open-source JavaScript application framework, based on the model-view-controller (MVC) pattern. It allows developers to create scalable single-page web applications by incorporating common idioms and best practices into the framework.</Description>
   </Circle>
   <Circle>
-    <Name>Test29</Name>
-    <x>22</x>
-    <y>21</y>
-    <Website>www.google.com</Website>
+    <Name>Angular</Name>
+    <x>61.720698254364095</x>
+    <y>63.090975564019637</y>
+    <Website>www.angularjs.org</Website>
+    <Description>AngularJS is a structural framework for dynamic web apps. It lets you use HTML as your template language and lets you extend HTML's syntax to express your application's components clearly and succinctly. Angular's data binding and dependency injection eliminate much of the code you would otherwise have to write.</Description>
   </Circle>
   <Circle>
-    <Name>Test30</Name>
-    <x>34.304429051882011</x>
-    <y>39.333094266287404</y>
-    <Website>www.google.com</Website>
+    <Name>Backbone</Name>
+    <x>76.683291770573575</x>
+    <y>79.051509105653835</y>
+    <Website>www.backbonejs.org</Website>
+    <Description>Backbone.js is a JavaScript framework that helps you organize your code. It is literally a backbone upon which you build your application. It doesn't provide widgets (like jQuery UI or Dojo).</Description>
   </Circle>
   <Circle>
-    <Name>Test31</Name>
-    <x>27.985297309027779</x>
-    <y>13.822428385416666</y>
-    <Website>www.google.com</Website>
+    <Name>Hadoop</Name>
+    <x>56.233120202423628</x>
+    <y>89.650012846302218</y>
+    <Website>www.hadoop.apache.org</Website>
+    <Description>Hadoop is an open-source software framework for storing data and running applications on clusters of commodity hardware. It provides massive storage for any kind of data, enormous processing power and the ability to handle virtually limitless concurrent tasks or jobs.</Description>
   </Circle>
   <Circle>
-    <Name>Test32</Name>
-    <x>55.558580139372829</x>
-    <y>32.649172473867594</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test33</Name>
-    <x>81.38201177285319</x>
-    <y>20.585180055401661</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test34</Name>
-    <x>64</x>
-    <y>38</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test36</Name>
-    <x>29.17243767313019</x>
-    <y>88.22931094182826</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test37</Name>
-    <x>83</x>
-    <y>62</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test38</Name>
-    <x>82.049651871298309</x>
-    <y>54.15064937753273</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test41</Name>
-    <x>39.97143351800554</x>
-    <y>5.1852493074792241</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test42</Name>
-    <x>36</x>
-    <y>29</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test43</Name>
-    <x>53.32409972299169</x>
-    <y>65.0623268698061</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test44</Name>
-    <x>46</x>
-    <y>88</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test45</Name>
-    <x>14.69199924992207</x>
-    <y>73.488162223834934</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test46</Name>
-    <x>18.999810349614247</x>
-    <y>54.999224503438668</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test49</Name>
-    <x>59.999742769540987</x>
-    <y>83.997906235388086</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test50</Name>
-    <x>30</x>
-    <y>66</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test51</Name>
-    <x>47</x>
-    <y>59</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test52</Name>
-    <x>19</x>
-    <y>15</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test53</Name>
-    <x>33.334054709141277</x>
-    <y>6.5053670360110809</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test54</Name>
-    <x>23</x>
-    <y>73</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test55</Name>
-    <x>7.9726906488661156</x>
-    <y>37.685734851104655</y>
-    <Website>www.ign.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test56</Name>
-    <x>24.865824099722992</x>
-    <y>28.512378808864263</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test59</Name>
-    <x>41.997872445351462</x>
-    <y>60.999844139650875</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test60</Name>
-    <x>44</x>
-    <y>16</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test61</Name>
-    <x>46.689895470383277</x>
-    <y>16.604965156794425</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test62</Name>
-    <x>54.847645429362878</x>
-    <y>9.0741862880886419</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test63</Name>
-    <x>27</x>
-    <y>78</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test64</Name>
-    <x>94.999044137702612</x>
-    <y>51.998912782740412</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test65</Name>
-    <x>84.567607340720215</x>
-    <y>22.985197368421055</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test66</Name>
-    <x>45</x>
-    <y>7</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test67</Name>
-    <x>30.189577562326868</x>
-    <y>25.480436288088644</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test68</Name>
-    <x>14.449555737122038</x>
-    <y>31.091978306187656</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test69</Name>
-    <x>81</x>
-    <y>36</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test70</Name>
-    <x>66.3975934903047</x>
-    <y>12.261945983379501</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test71</Name>
-    <x>42</x>
-    <y>54</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test72</Name>
-    <x>63</x>
-    <y>42</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test73</Name>
-    <x>29</x>
-    <y>20</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test74</Name>
-    <x>27.998576556655237</x>
-    <y>40.517199128643234</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test75</Name>
-    <x>82.621144891677062</x>
-    <y>75.6572162123987</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test76</Name>
-    <x>25.297002245363153</x>
-    <y>41.528126248100449</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test77</Name>
-    <x>89.75285664819944</x>
-    <y>60.041551246537395</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test78</Name>
-    <x>10.585516646615883</x>
-    <y>67.574121946111291</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test79</Name>
-    <x>74.626802744116276</x>
-    <y>30.990235288244232</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test80</Name>
-    <x>46.998386906269488</x>
-    <y>42.997977620645649</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test81</Name>
-    <x>66</x>
-    <y>71</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test82</Name>
-    <x>33.046225761772853</x>
-    <y>9.985283933518005</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test83</Name>
-    <x>39</x>
-    <y>77</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test85</Name>
-    <x>55</x>
-    <y>45</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test86</Name>
-    <x>34</x>
-    <y>55</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test87</Name>
-    <x>76.411011080332415</x>
-    <y>12.893871191135734</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test88</Name>
-    <x>57.192087530197945</x>
-    <y>51.977265089230052</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test89</Name>
-    <x>-94.0314219182269</x>
-    <y>54.999224503438668</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test90</Name>
-    <x>5.6217945127415829</x>
-    <y>64.368162844841024</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test91</Name>
-    <x>68.437845510734888</x>
-    <y>55.549062219938442</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test92</Name>
-    <x>65.461346633416468</x>
-    <y>52.635341273281647</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test93</Name>
-    <x>88</x>
-    <y>29</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test94</Name>
-    <x>35.49818213296399</x>
-    <y>20.559210526315788</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>Test95</Name>
-    <x>64.35950224536316</x>
-    <y>32.358343642846009</y>
-    <Website>www.google.com</Website>
-  </Circle>
-  <Circle>
-    <Name>DTest</Name>
-    <x>24.686544137702619</x>
-    <y>11.594278616203631</y>
-    <Website>www.google.com</Website>
-    <Description>This is a test description</Description>
+    <Name>MS_SQL</Name>
+    <x>43.266399126694985</x>
+    <y>56.733167082294266</y>
+    <Website>www.microsoft.com</Website>
+    <Description>SQL Server is a relational database management system (RDBMS) from Microsoft that's designed for the enterprise environment.</Description>
   </Circle>
 </ArrayOfCircle>

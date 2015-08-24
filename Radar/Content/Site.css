@@ -433,3 +433,44 @@ footer {
     color: #a7aabc;
     font-weight: 200;
 }
+
+.customList h2 {
+    color: darkorange;
+}
+
+.customList h3 { 
+  margin-left: 20px;
+  padding: 0;
+  color:orange;
+}
+ 
+.customList ul {
+  list-style-type: none;
+  margin-left: 60px;
+  padding: 0;
+}
+ 
+.customList li {
+  font: 200 15px/1.5 Helvetica, Verdana, sans-serif;
+}
+ 
+.customList li:last-child {
+  border: none;
+}
+ 
+.customList li span {
+  text-decoration: none;
+  color: white;
+  display: block;
+  width: 200px;
+ 
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+ 
+.customList li span:hover {
+  font-size: 30px; 
+}

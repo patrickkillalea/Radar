@@ -11,6 +11,8 @@ function radarController($scope, $timeout) {
     $scope.laf = { 'Hold': [], 'Assess': [], 'Trial': [], 'Adopt': [] };
     $scope.platforms = { 'Hold': [], 'Assess': [], 'Trial': [], 'Adopt': [] };
 
+    $scope.radarVisible = true;
+
     //setting the location of the toaster notifications 
     toastr.options = {
         "positionClass": "toast-bottom-right",
@@ -262,14 +264,31 @@ function radarController($scope, $timeout) {
     }
 
     $scope.orderForList = function () {
+        //emptying the lists to refill them
+        $scope.tools = { 'Hold': [], 'Assess': [], 'Trial': [], 'Adopt': [] };
+        $scope.techniques = { 'Hold': [], 'Assess': [], 'Trial': [], 'Adopt': [] };
+        $scope.laf = { 'Hold': [], 'Assess': [], 'Trial': [], 'Adopt': [] };
+        $scope.platforms = { 'Hold': [], 'Assess': [], 'Trial': [], 'Adopt': [] };
 
-        console.log('test');
         $.each($scope.circles, function (index, circle) {
             sortCircles(circle, $scope.techniques, 'Techniques');
             sortCircles(circle, $scope.tools, 'Tools');
             sortCircles(circle, $scope.laf, 'Languages & Frameworks');
             sortCircles(circle, $scope.platforms, 'Platforms');
         });
+
+        if ($scope.radarVisible) {
+            $("#radarContent").fadeOut(function () {
+                $("#circleList").fadeIn();
+            });
+            $scope.radarVisible = false;
+        }
+        else {
+            $("#circleList").fadeOut(function () {
+                $("#radarContent").fadeIn();
+            });
+            $scope.radarVisible = true;
+        }
     }
 
     //used for search bar at top of page
