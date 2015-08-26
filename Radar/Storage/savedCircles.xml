@@ -85,13 +85,6 @@
     <Description>GitHub is a Web-based Git repository hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features.</Description>
   </Circle>
   <Circle>
-    <Name>TFS</Name>
-    <x>58.726885788458539</x>
-    <y>45.883559229367989</y>
-    <Website>www.visualstudio.com</Website>
-    <Description>Team Foundation Server (commonly abbreviated to TFS) is a Microsoft product which provides source code management (either via Team Foundation Version Control or Git), reporting, requirements management, project management (for both agile software development and waterfall teams), automated builds, lab management</Description>
-  </Circle>
-  <Circle>
     <Name>Xamarin</Name>
     <x>71.693599253818576</x>
     <y>28.927250812178539</y>
