@@ -2,134 +2,134 @@
 <ArrayOfCircle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Circle>
     <Name>Pair_Programming</Name>
-    <x>18.952184662854581</x>
-    <y>16.70736564959671</y>
+    <x>-29.250346260387811</x>
+    <y>-85.2319944598338</y>
     <Website>www.pairprogramming.com</Website>
     <Description>Pair programming (sometimes referred to as peer programming) is an agile software development technique in which two programmers work as a pair together on one workstation. One, the driver, writes code while the other, the observer, pointer or navigator, reviews each line of code as it is typed in.</Description>
   </Circle>
   <Circle>
     <Name>IOS_Accessibility</Name>
-    <x>26.931366956144792</x>
-    <y>27.680368019161083</y>
+    <x>-30.964335180055404</x>
+    <y>-18.858206371191137</y>
     <Website>www.apple.com</Website>
     <Description>Understanding Accessibility on iOS. From the beginning, iOS-based devices included several features that made the device easy for everyone</Description>
   </Circle>
   <Circle>
     <Name>IOS_Adaptivity</Name>
-    <x>39.025703867771981</x>
-    <y>32.167844700991658</y>
+    <x>-48.23407202216066</x>
+    <y>-47.333795013850413</y>
     <Website>www.apple.com</Website>
     <Description>Adaptive UI is meant to help rationalize a world with multiple devices, and let developers use a single storyboard in Interface builder to target different aspect ratios, screen sizes, orientations, and display densities.</Description>
   </Circle>
   <Circle>
     <Name>Build_Pipelines</Name>
-    <x>21.569337155158976</x>
-    <y>37.404322445838531</y>
+    <x>-28.29380193905817</x>
+    <y>-52.627250692520775</y>
     <Website>www.buildpipelines.com</Website>
     <Description>A deployment pipeline is a way to deal with this by breaking up your build into stages. Each stage provides increasing confidence, usually at the cost of extra time.</Description>
   </Circle>
   <Circle>
     <Name>Polygot_Programming</Name>
-    <x>40.482564341100371</x>
-    <y>43.658218954566706</y>
+    <x>-16.30453601108033</x>
+    <y>-12.023891966759003</y>
     <Website>www.polygotprogramming.com</Website>
     <Description>In computing, a polyglot is a computer program or script written in a valid form of multiple programming languages, which performs the same operations or output independent of the programming language used to compile or interpret it.</Description>
   </Circle>
   <Circle>
     <Name>Load_Balancing</Name>
-    <x>31.755411331955564</x>
-    <y>40.829790832865662</y>
+    <x>-57.998614958448755</x>
+    <y>-27.038608033240997</y>
     <Website>www.loadbalancing.com</Website>
     <Description>A load balancer is a device that acts as a reverse proxy and distributes network or application traffic across a number of servers. Load balancers are used to increase capacity (concurrent users) and reliability of applications.</Description>
   </Circle>
   <Circle>
     <Name>Code_Reviews</Name>
-    <x>45.134561971536</x>
-    <y>39.151255923910924</y>
+    <x>-7.2238573407202216</x>
+    <y>-19.576696675900276</y>
     <Website>www.codereviews.com</Website>
     <Description>Code review is systematic examination (often known as peer review) of computer source code. It is intended to find and fix mistakes overlooked in the initial development phase, improving both the overall quality of software and the developers' skills.</Description>
   </Circle>
   <Circle>
     <Name>Git_Flow</Name>
-    <x>38.1533120933019</x>
-    <y>19.950126590871452</y>
+    <x>-16.698407202216067</x>
+    <y>-35.729743767313025</y>
     <Website>www.github.com</Website>
     <Description>GitFlow is a branching model for Git, created by Vincent Driessen. It has attracted a lot of attention because it is very well suited to collaboration and scaling the development team.</Description>
   </Circle>
   <Circle>
     <Name>LeanKit</Name>
-    <x>52.117973194455267</x>
-    <y>39.6491414590964</y>
+    <x>21.9226108033241</x>
+    <y>-26.835180055401665</y>
     <Website>www.leankit.com</Website>
     <Description>LeanKit is a visual project delivery tool that enables teams of all types and across all levels of the organization to apply Lean management principles to their work. Whatever workflow methodology you use — including Kanban, Scrum, Waterfall and anything in between — we help you remove waste and continuously improve.</Description>
   </Circle>
   <Circle>
     <Name>Trello</Name>
-    <x>62.218583789549562</x>
-    <y>35.2850516835353</y>
+    <x>26.757271468144044</x>
+    <y>-55.020775623268705</y>
     <Website>www.trello.com</Website>
     <Description>A Trello board is a list of lists, filled with cards, used by you and your team. It's a lot more than that, though. Trello has everything you need to organize projects of any size. Open a card and you can add comments, upload file attachments, create checklists, add labels and due dates, and more.</Description>
   </Circle>
   <Circle>
     <Name>MongoBD</Name>
-    <x>76.057689029379674</x>
-    <y>16.33286702068072</y>
+    <x>78.27216066481995</x>
+    <y>-25.497749307479221</y>
     <Website>www.mongodb.org</Website>
     <Description>MongoDB is a document database that provides high performance, high availability, and easy scalability. Document Database. Documents (objects) map nicely to programming language data types. Embedded documents and arrays reduce need for joins. Dynamic schema makes polymorphism easier.</Description>
   </Circle>
   <Circle>
     <Name>GitHub</Name>
-    <x>55.984169824462285</x>
-    <y>42.142910850315616</y>
+    <x>12.214335180055402</x>
+    <y>-8.8296398891966756</y>
     <Website>www.github.com</Website>
     <Description>GitHub is a Web-based Git repository hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features.</Description>
   </Circle>
   <Circle>
     <Name>Xamarin</Name>
-    <x>71.693599253818576</x>
-    <y>28.927250812178539</y>
+    <x>54.241689750692522</x>
+    <y>-26.198926592797783</y>
     <Website>www.xamarin.com</Website>
     <Description>Xamarin is a San Francisco, California based software company created in May 2011 by the engineers that created Mono, MonoTouch and Mono for Android which are cross-platform implementations of the Common Language Infrastructure (CLI) and Common Language Specifications (often called Microsoft .NET).</Description>
   </Circle>
   <Circle>
     <Name>Articulate_Storyline</Name>
-    <x>55.858621573507641</x>
-    <y>18.203191210206903</y>
+    <x>18.18299861495845</x>
+    <y>-79.86063019390582</y>
     <Website>www.articulate.com</Website>
     <Description>Easily create any interactive course you can imagine with Articulate Storyline 2, the only e-learning authoring software that grows with you.</Description>
   </Circle>
   <Circle>
     <Name>Visio</Name>
-    <x>57.854494013988464</x>
-    <y>45.88139407949852</y>
+    <x>36.244806094182827</x>
+    <y>-19.77146814404432</y>
     <Website>www.visio.com</Website>
     <Description>Microsoft Visio is a diagramming and vector graphics application and is part of the Microsoft Office family. The product was first introduced in 1992, made by the Shapeware corporation. It was acquired by Microsoft in 2000.</Description>
   </Circle>
   <Circle>
     <Name>Biztalk</Name>
-    <x>78.6726725666303</x>
-    <y>42.140745700446153</y>
+    <x>68.144044321329645</x>
+    <y>45.186980609418285</y>
     <Website>www.msdn.com</Website>
     <Description>BizTalk is an industry initiative headed by Microsoft to promote Extensible Markup Language (XML) as the common data exchange language for e-commerce and application integration on the Internet. While not a standards body per se, the group is fostering a common XML message-passing architecture to tie systems together.</Description>
   </Circle>
   <Circle>
     <Name>Service_Now</Name>
-    <x>39.151252118726617</x>
-    <y>52.117973194455267</y>
+    <x>-22.623788088642659</x>
+    <y>5.5791204986149578</y>
     <Website>www.servicenow.com</Website>
     <Description>A portfolio of products to boost efficiency. ServiceNow is changing the way people work. By placing a service-oriented lens on the activities, tasks and processes that make up day-to-day work life, we help the modern enterprise operate faster, better and more scalable than ever before.</Description>
   </Circle>
   <Circle>
     <Name>Workday</Name>
-    <x>46.38360610923862</x>
-    <y>57.854501624357077</y>
+    <x>-6.804016620498615</x>
+    <y>19.34729916897507</y>
     <Website>www.workday.com</Website>
     <Description>Workday, Inc. is an on‑demand (cloud-based) financial management and human capital management software vendor. It was founded by David Duffield, the founder and former CEO of the ERP giant PeopleSoft, and former PeopleSoft chief strategist Aneel Bhusri following Oracle's hostile takeover of PeopleSoft in 2005.</Description>
   </Circle>
   <Circle>
     <Name>TFS</Name>
-    <x>40.768303240921135</x>
-    <y>54.611738780490185</y>
+    <x>-12.417763157894738</x>
+    <y>15.551419667590027</y>
     <Website>www.microsoft.com</Website>
     <Description>Team Foundation Server (commonly abbreviated to TFS) is a Microsoft product which provides source code management (either via Team Foundation Version Control or Git), reporting, requirements management, project management (for both agile software development and waterfall teams), automated builds, lab management</Description>
   </Circle>
@@ -142,106 +142,106 @@
   </Circle>
   <Circle>
     <Name>DotNET</Name>
-    <x>57.480002995441083</x>
-    <y>51.869026621678231</y>
+    <x>43.35180055401662</x>
+    <y>34.413954293628805</y>
     <Website>www.microsoft.com</Website>
     <Description>.NET Framework (pronounced dot net) is a software framework developed by Microsoft that runs primarily on Microsoft Windows.</Description>
   </Circle>
   <Circle>
     <Name>Java</Name>
-    <x>52.866962841918642</x>
-    <y>56.356507108693108</y>
+    <x>24.056440443213297</x>
+    <y>70.48130193905817</y>
     <Website>www.java.com</Website>
     <Description>Java is a programming language expressly designed for use in the distributed environment of the Internet. It was designed to have the "look and feel" of the C++ language, but it is simpler to use than C++ and enforces an object-oriented programming model.</Description>
   </Circle>
   <Circle>
     <Name>My_SQL</Name>
-    <x>34.787162343165519</x>
-    <y>61.967479677271662</y>
+    <x>-83.219355955678679</x>
+    <y>34.26246537396122</y>
     <Website>www.mysql.com</Website>
     <Description>MySQL is a relational database management system (RDBMS); in July 2013, it was the world's second most [a] widely used RDBMS, and the most widely used open-source RDBMS.</Description>
   </Circle>
   <Circle>
     <Name>QualityCentre</Name>
-    <x>11.843221383796369</x>
-    <y>66.457125314156016</y>
+    <x>-36.357340720221607</x>
+    <y>46.234418282548475</y>
     <Website>http://www8.hp.com/us/en/software-solutions/quality-center-quality-management/</Website>
     <Description>HP Quality Center is quality management software offered from the HP Software Division of Hewlett-Packard with many capabilities acquired from Mercury Interactive Corporation.</Description>
   </Circle>
   <Circle>
     <Name>VisualStudio_2015</Name>
-    <x>67.704008107173479</x>
-    <y>53.613798755065453</y>
+    <x>15.347991689750693</x>
+    <y>30.34106648199446</y>
     <Website>www.visualstudio.com</Website>
     <Description>Microsoft Visual Studio is an integrated development environment (IDE) from Microsoft. It is used to develop computer programs for Microsoft Windows, as well as web sites, web applications and web services.</Description>
   </Circle>
   <Circle>
     <Name>TFS_2015</Name>
-    <x>18.703241895261847</x>
-    <y>53.364855987472723</y>
+    <x>-31.713123268698062</x>
+    <y>23.169148199445981</y>
     <Website>www.visualstudio.com</Website>
     <Description>Microsoft Visual Studio is an integrated development environment (IDE) from Microsoft. It is used to develop computer programs for Microsoft Windows, as well as web sites, web applications and web services.</Description>
   </Circle>
   <Circle>
     <Name>Apache</Name>
-    <x>25.4355413955346</x>
-    <y>69.076446761514191</y>
+    <x>-18.057479224376731</x>
+    <y>54.670186980609415</y>
     <Website>www.apache.com</Website>
     <Description>Apache is a freely available Web server that is distributed under an "open source" license. Version 2.0 runs on most UNIX-based operating systems (such as Linux, Solaris, Digital UNIX, and AIX), on other UNIX/POSIX-derived systems (such as Rhapsody, BeOS, and BS2000/OSD), on AmigaOS, and on Windows 2000.</Description>
   </Circle>
   <Circle>
     <Name>MacOS</Name>
-    <x>42.642957730186254</x>
-    <y>79.300451873246573</y>
+    <x>17.434210526315788</x>
+    <y>56.029259002770083</y>
     <Website>www.apple.com</Website>
     <Description>Mac OS is a series of graphical user interface–based operating systems developed by Apple Inc. for their Macintosh line of computer systems. The original operating system was first introduced in 1984 as being integral to the original Macintosh, and referred to as the "System".</Description>
   </Circle>
   <Circle>
     <Name>Linux</Name>
-    <x>28.301644265800341</x>
-    <y>85.28592307074112</y>
+    <x>-45.663088642659275</x>
+    <y>42.347645429362878</y>
     <Website>www.linux.com</Website>
     <Description>An open-source operating system modelled on UNIX.</Description>
   </Circle>
   <Circle>
     <Name>DjangoRest</Name>
-    <x>90.522397010403679</x>
-    <y>56.607618831339622</y>
+    <x>58.38815789473685</x>
+    <y>20.039819944598339</y>
     <Website>www.djangoproject.com</Website>
     <Description>Django is a free and open source web application framework, written in Python. A web framework is a set of components that helps you to develop websites faster and easier.</Description>
   </Circle>
   <Circle>
     <Name>EmberJS</Name>
-    <x>70.572272322124377</x>
-    <y>69.201995012468828</y>
+    <x>11.569425207756233</x>
+    <y>13.521468144044322</y>
     <Website>www.emberjs.com</Website>
     <Description>emberjs.com. Free software portal. Ember.js is an open-source JavaScript application framework, based on the model-view-controller (MVC) pattern. It allows developers to create scalable single-page web applications by incorporating common idioms and best practices into the framework.</Description>
   </Circle>
   <Circle>
     <Name>Angular</Name>
-    <x>61.720698254364095</x>
-    <y>63.090975564019637</y>
+    <x>32.353704986149587</x>
+    <y>24.584487534626039</y>
     <Website>www.angularjs.org</Website>
     <Description>AngularJS is a structural framework for dynamic web apps. It lets you use HTML as your template language and lets you extend HTML's syntax to express your application's components clearly and succinctly. Angular's data binding and dependency injection eliminate much of the code you would otherwise have to write.</Description>
   </Circle>
   <Circle>
     <Name>Backbone</Name>
-    <x>76.683291770573575</x>
-    <y>79.051509105653835</y>
+    <x>14.352493074792244</x>
+    <y>5.9210526315789469</y>
     <Website>www.backbonejs.org</Website>
     <Description>Backbone.js is a JavaScript framework that helps you organize your code. It is literally a backbone upon which you build your application. It doesn't provide widgets (like jQuery UI or Dojo).</Description>
   </Circle>
   <Circle>
     <Name>Hadoop</Name>
-    <x>56.233120202423628</x>
-    <y>89.650012846302218</y>
+    <x>51.523545706371188</x>
+    <y>61.668975069252078</y>
     <Website>www.hadoop.apache.org</Website>
     <Description>Hadoop is an open-source software framework for storing data and running applications on clusters of commodity hardware. It provides massive storage for any kind of data, enormous processing power and the ability to handle virtually limitless concurrent tasks or jobs.</Description>
   </Circle>
   <Circle>
     <Name>MS_SQL</Name>
-    <x>43.266399126694985</x>
-    <y>56.733167082294266</y>
+    <x>-20.1696675900277</x>
+    <y>11.02406509695291</y>
     <Website>www.microsoft.com</Website>
     <Description>SQL Server is a relational database management system (RDBMS) from Microsoft that's designed for the enterprise environment.</Description>
   </Circle>
