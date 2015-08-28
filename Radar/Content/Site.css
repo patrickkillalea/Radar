@@ -281,6 +281,9 @@ footer {
     position: absolute;
 }
 
+
+
+
 /* * Copyright (c) 2012 Thibaut Courouble
  * Licensed under the MIT License
    ================================================== */
@@ -473,4 +476,82 @@ footer {
  
 .customList li span:hover {
   font-size: 30px; 
+}
+
+
+.quadrant:hover{
+ 
+  /* Add drop shadow effect */
+  /*   http://www.webestools.com/css3-box-shadow-generator-css-property-easy-shadows-div-html5-drop-shadow-moz-webkit-shadow-maker.html   */
+  -moz-box-shadow:0px 0px 50px 0px #000000;
+  -webkit-box-shadow:0px 0px 50px 0px #000000;
+  box-shadow:0px 0px 50px 0px #000000;
+  
+  /* Add curved corners via CSS3 Border radius to popped item that mimic original website effect */
+  /*   http://border-radius.com/    */
+  -webkit-border-top-left-radius: 200px;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0; 
+  background-color:#00A7D4;
+
+  /* Give it a higher z-index to it's on top of adjacent items near it. */
+  z-index: 10;
+}
+.quadrant2:hover{
+ 
+  /* Add drop shadow effect */
+  /*   http://www.webestools.com/css3-box-shadow-generator-css-property-easy-shadows-div-html5-drop-shadow-moz-webkit-shadow-maker.html   */
+  -moz-box-shadow:0px 0px 50px 0px #000000;
+  -webkit-box-shadow:0px 0px 50px 0px #000000;
+  box-shadow:0px 0px 50px 0px #000000;
+  
+  /* Add curved corners via CSS3 Border radius to popped item that mimic original website effect */
+  /*   http://border-radius.com/    */
+  -webkit-border-top-left-radius:0px;
+  -webkit-border-top-right-radius: 200px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0; 
+  background-color:#D04F4F;
+
+  /* Give it a higher z-index to it's on top of adjacent items near it. */
+  z-index: 10;
+}
+.quadrant3:hover{
+ 
+  /* Add drop shadow effect */
+  /*   http://www.webestools.com/css3-box-shadow-generator-css-property-easy-shadows-div-html5-drop-shadow-moz-webkit-shadow-maker.html   */
+  -moz-box-shadow:0px 0px 50px 0px #000000;
+  -webkit-box-shadow:0px 0px 50px 0px #000000;
+  box-shadow:0px 0px 50px 0px #000000;
+  
+  /* Add curved corners via CSS3 Border radius to popped item that mimic original website effect */
+  /*   http://border-radius.com/    */
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-left-radius: 200px;
+  -webkit-border-bottom-right-radius: 0; 
+  background-color:#FF7F50;
+
+  /* Give it a higher z-index to it's on top of adjacent items near it. */
+  z-index: 10;
+}
+.quadrant4:hover{
+ 
+  /* Add drop shadow effect */
+  /*   http://www.webestools.com/css3-box-shadow-generator-css-property-easy-shadows-div-html5-drop-shadow-moz-webkit-shadow-maker.html   */
+  -moz-box-shadow:0px 0px 50px 0px #000000;
+  -webkit-box-shadow:0px 0px 50px 0px #000000;
+  box-shadow:0px 0px 50px 0px #000000;
+  
+  /* Add curved corners via CSS3 Border radius to popped item that mimic original website effect */
+  /*   http://border-radius.com/    */
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 200px; 
+  background-color:#81B245;
+
+  /* Give it a higher z-index to it's on top of adjacent items near it. */
+  z-index: 10;
 }

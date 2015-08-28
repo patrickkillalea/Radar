@@ -3,13 +3,22 @@
 angular.module('app', []).controller(controllerId, ['$scope', '$timeout', radarController]);
 
 function radarController($scope, $timeout) {
+    $scope.radarPos = $("#radar").position();
+    $("#ping").css({ top: $scope.radarPos.top, left: $scope.radarPos.left, position: 'absolute' });
+    $("#ping").css({ width: 0, height: 0 });
     $scope.circleNames = [];
+
+    $scope.backToRadar = false;
 
     //used for listing the different technologies
     $scope.tools = { 'Hold': [], 'Assess': [], 'Trial': [], 'Adopt': [] };
     $scope.techniques = { 'Hold': [], 'Assess': [], 'Trial': [], 'Adopt': [] };
     $scope.laf = { 'Hold': [], 'Assess': [], 'Trial': [], 'Adopt': [] };
     $scope.platforms = { 'Hold': [], 'Assess': [], 'Trial': [], 'Adopt': [] };
+
+    var currentImage = "radar";
+
+    var quadrantOpen = false;
 
     $scope.radarVisible = true;
 
@@ -18,20 +27,21 @@ function radarController($scope, $timeout) {
         "positionClass": "toast-bottom-right",
     }
 
+    //bug where first circle isnt processed, small fix by storing it and running it last to be positioned
+    var storedCircle;
+    var storedIndex;
+    var stored = false;
+
+    var timeOutPing;
+    timeOutPing = setInterval(pingRadar, 15);
+    clearInterval(timeOutPing);
+    var idleInterval;
+
     var radarTopLeft = { 'x': $("#radar").position().left, 'y': $("#radar").position().top };
     var radarMiddle = { 'x': $("#radar").position().left + ($("#radar").width() / 2), 'y': $("#radar").position().top + ($("#radar").height() / 2) };
 
     var circleDiameter = 15;
     $scope.clickedCircle = 'poop';
-
-
-    /*
-    var testIndex = 0;
-
-    $scope.circles = [
-         { 'Name': 'Test' + (testIndex++).toString(), 'x': Math.floor((Math.random() * 95) + 1), 'y': Math.floor((Math.random() * 95) + 1), 'Website': 'www.google.com' },
-    ] */
-
 
     //loading the circles from the XML file on startup
     loadCircleXML();
@@ -40,12 +50,56 @@ function radarController($scope, $timeout) {
         placement: 'top'
     });
 
+    //below is code related to making a ping affect of the screen. This is not necessary but I thought it was cool so feck off Pat XD 
+    /*
+    var idleTime = 0;
+    $(document).ready(function () {
+        //Increment the idle time counter every minute.
+        idleInterval = setInterval(timerIncrement, 3000); // 10 seconds
+
+        //Zero the idle timer on mouse movement.
+        $(this).mousemove(function (e) { 
+            clearInterval(timeOutPing);
+            idleInterval = setInterval(timerIncrement, 3000);
+            idleTime = 0;
+        }); 
+    });
+
+    function timerIncrement() {
+        idleTime = idleTime + 1;
+        console.log(idleTime);
+        if (idleTime > 1) {
+            clearInterval(idleInterval);
+            timeOutPing = setInterval(pingRadar, 15);
+        }
+    }*/
+
+    //pingRadar();
+
     //FUNCTIONS -------------------------------------------------------------------------------------------------------------------------------------
+    //ping effect
+    function pingRadar() {
+        $("#ping").css({ opacity: 0.5 });
+
+        var pingWidth = $("#ping").width() + 5;
+        var pingHeight = $("#ping").height() + 5;
+
+        var pingX = radarMiddle.x - pingWidth / 2;
+        var pingY = radarMiddle.y - pingHeight / 2;
+
+        var pingOpacity = 1 - (pingWidth / $("#radar").width());
+        console.log(pingOpacity);
+        if (pingWidth > $("#radar").width()) {
+            pingWidth = 0;
+            pingHeight = 0;
+            pingOpacity = 1;
+        }
+        $("#ping").css({ width: pingWidth, height: pingHeight, opacity: pingOpacity, left: pingX, top: pingY });
+    }
 
     $scope.createCircle = function () {
         $scope.circles.push({ 'Name': $scope.circleName.replace(/ /g, "_"), 'x': 0, 'y': 0, 'Website': $scope.website, 'Description': $scope.description });
-        makeCirclesDraggable()
-        listAllNames();
+        makeCirclesDraggable();
     }
 
     $scope.editCircle = function () {
@@ -62,12 +116,11 @@ function radarController($scope, $timeout) {
 
         makeCirclesDraggable();
         $scope.saveCirclesXML();
-        listAllNames();
     }
 
     function makeCirclesDraggable() {
         $.each($scope.circles, function (index, circle) {
-            calculateCirclePositions(index, circle)
+            calculateCirclePositions(index, circle);
 
             $timeout(function () { //Move code up the callstack to tell Angular to watch this 
                 //makes the circle draggable as well logging the position it is lifted from and where it is dropped to the console
@@ -89,15 +142,16 @@ function radarController($scope, $timeout) {
                             $("#bin").fadeOut();
                         }, 1000);
 
-                        // Show dropped position.
+                        // Show dropped position
                         var Stoppos = $(this).position();
 
                         //updating it's location
-                        circle.x = ((Stoppos.left - radarTopLeft.x) / $("#radar").width()) * 100;
-                        circle.y = ((Stoppos.top - radarTopLeft.y) / $("#radar").height()) * 100;
+                        circle.x = ((Stoppos.left - radarMiddle.x) / ($("#radar").width() / 2)) * 100;
+                        circle.y = ((Stoppos.top - radarMiddle.y) / ($("#radar").height() / 2)) * 100;
 
                         //working out distance of the circle from the centre and then assigning the state of the circle depending where it is dropped
-                        findCircleRealPosition(circle);
+                        radarMiddle = { 'x': $("#radar").position().left + ($("#radar").width() / 2), 'y': $("#radar").position().top + ($("#radar").height() / 2) };
+                        findCircleRealPosition(circle, radarMiddle, false);
                         catagorize(index, circle, true);
 
                         //saving the change made to the circle
@@ -109,6 +163,7 @@ function radarController($scope, $timeout) {
                 Tipped.create("#" + circle.Name, circle.Name, { position: 'topleft' });
             });
         });
+        calculateCirclePositions(storedIndex, storedCircle);
     }
 
     function catagorize(index, circle, notifications) {
@@ -118,7 +173,7 @@ function radarController($scope, $timeout) {
         var binLeft = $("#bin").position().left;
         var binWidth = binLeft + $("#bin").width();
         var binTop = $("#bin").position().top;
-        var binHeight = binTop + $("#bin").height(); 
+        var binHeight = binTop + $("#bin").height();
 
         var stateBefore = circle.State;
 
@@ -185,8 +240,13 @@ function radarController($scope, $timeout) {
     function calculateCirclePositions(index, circle) {
         $timeout(function () { //Move code up the callstack to tell Angular to watch this  
 
+            if (!stored) {
+                storedCircle = circle;
+                storedIndex = index;
+                stored = true;
+            }
             //using the size and location of the radar image as a reference to position the circles. 
-            findCircleRealPosition(circle);
+            findCircleRealPosition(circle, radarMiddle, false);
 
             $("#" + circle.Name).css({ top: circle.realY, left: circle.realX });
 
@@ -200,13 +260,18 @@ function radarController($scope, $timeout) {
         });
     }
 
-    function findCircleRealPosition(circle) {
+    function findCircleRealPosition(circle, referencePoint, quadrant) {
         //using the size and location of the radar image as a reference to position the circles. 
-        var radarTopLeft = { 'x': $("#radar").position().left, 'y': $("#radar").position().top };
-        radarMiddle = { 'x': $("#radar").position().left + ($("#radar").width() / 2), 'y': $("#radar").position().top + ($("#radar").height() / 2) };
 
-        var circleX = radarTopLeft.x + (($("#radar").width() / 100) * circle.x);
-        var circleY = radarTopLeft.y + (($("#radar").height() / 100) * circle.y);
+        if (!quadrant) {
+            var circleX = referencePoint.x + (($("#" + currentImage).width() / 100 / 2) * circle.x);
+            var circleY = referencePoint.y + (($("#" + currentImage).height() / 100 / 2) * circle.y);
+        }
+        else {
+            var circleX = referencePoint.x + (($("#" + currentImage).width() / 100) * circle.x);
+            var circleY = referencePoint.y + (($("#" + currentImage).height() / 100) * circle.y);
+        }
+
         circle.realX = circleX;
         circle.realY = circleY;
     }
@@ -220,8 +285,59 @@ function radarController($scope, $timeout) {
     //when the window resizes the circles will stay in the position they are meant to on the radar
     $(window).resize(function () {
         $timeout(function () {
-            radarTopLeft = { 'x': $("#radar").position().left, 'y': $("#radar").position().top };
-            makeCirclesDraggable();
+            if (!quadrantOpen) {
+                $scope.radarPos = $("#radar").position();
+                //$("#ping").css({ top: $scope.radarPos.top, left: $scope.radarPos.left, position: 'absolute' });
+                radarTopLeft = { 'x': $("#radar").position().left, 'y': $("#radar").position().top };
+                radarMiddle = { 'x': $("#radar").position().left + ($("#radar").width() / 2), 'y': $("#radar").position().top + ($("#radar").height() / 2) };
+                makeCirclesDraggable();
+            }
+
+            else {
+                var middleRefence;
+                switch (currentImage) {
+                    case ('techniques'):
+                        middleReference = {
+                            'x': $("#" + currentImage).position().left + $("#" + currentImage).width(),
+                            'y': $("#" + currentImage).position().top + $("#" + currentImage).height()
+                        };
+                        $scope.quadrantCircles = $scope.techniques;
+                        $scope.quadrantList = $scope.techniques;
+                        break;
+
+                    case ('tools'):
+                        middleReference = {
+                            'x': $("#" + currentImage).position().left,
+                            'y': $("#" + currentImage).position().top + $("#" + currentImage).height()
+                        };
+                        $scope.quadrantCircles = $scope.tools;
+                        $scope.quadrantList = $scope.tools;
+                        break;
+
+                    case ('platforms'):
+                        middleReference = {
+                            'x': $("#" + currentImage).position().left + $("#" + currentImage).width(),
+                            'y': $("#" + currentImage).position().top
+                        };
+                        $scope.quadrantCircles = $scope.platforms;
+                        $scope.quadrantList = $scope.platforms;
+                        break;
+
+                    case ('frameworks'):
+                        middleReference = {
+                            'x': $("#" + currentImage).position().left,
+                            'y': $("#" + currentImage).position().top
+                        };
+                        $scope.quadrantCircles = $scope.laf;
+                        $scope.quadrantList = $scope.laf;
+                        break;
+                }
+
+                $.each($scope.circles, function (index, circle) {
+                    findCircleRealPosition(circle, middleReference, true);
+                    $("#" + circle.Name).css({ top: circle.realY, left: circle.realX });
+                });
+            }
         });
     });
 
@@ -244,7 +360,6 @@ function radarController($scope, $timeout) {
             dataType: 'json',
             success: function (data) {
                 $scope.circles = data;
-                listAllNames();
                 makeCirclesDraggable();
             }
         });
@@ -263,7 +378,7 @@ function radarController($scope, $timeout) {
         }
     }
 
-    $scope.orderForList = function () {
+    $scope.orderForList = function (switchScreen) {
         //emptying the lists to refill them
         $scope.tools = { 'Hold': [], 'Assess': [], 'Trial': [], 'Adopt': [] };
         $scope.techniques = { 'Hold': [], 'Assess': [], 'Trial': [], 'Adopt': [] };
@@ -277,25 +392,21 @@ function radarController($scope, $timeout) {
             sortCircles(circle, $scope.platforms, 'Platforms');
         });
 
-        if ($scope.radarVisible) {
-            $("#radarContent").fadeOut(function () {
-                $("#circleList").fadeIn();
-            });
-            $scope.radarVisible = false;
+        //makes sure not to switch to the list screen when sorting the circles
+        if (switchScreen) {
+            if ($scope.radarVisible) {
+                $("#radarContent").fadeOut(function () {
+                    $("#circleList").fadeIn();
+                });
+                $scope.radarVisible = false;
+            }
+            else {
+                $("#circleList").fadeOut(function () {
+                    $("#radarContent").fadeIn();
+                });
+                $scope.radarVisible = true;
+            }
         }
-        else {
-            $("#circleList").fadeOut(function () {
-                $("#radarContent").fadeIn();
-            });
-            $scope.radarVisible = true;
-        }
-    }
-
-    //used for search bar at top of page
-    function listAllNames() {
-        $.each($scope.circles, function (index, circle) {
-            $scope.circleNames.push(circle.Name);
-        });
     }
 
     //will highlight the circle for a time before return to normal
@@ -329,4 +440,116 @@ function radarController($scope, $timeout) {
         $("#searchBar").css('display', 'none');
     });
 
+    //functions for quadrants --------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------------
+
+    $scope.closeQuadrant = function () {
+        quadrantOpen = false;
+        $scope.backToRadar = false;
+        $("#circles").fadeOut();
+        $("#quadrantList").fadeOut();
+        $("#closeQuadrantButton").fadeOut();
+        $("#selectQuadrant").fadeIn();
+
+        //making the circles draggable again, wont work otherwise
+        $.each($scope.circles, function (index, circle) {
+            $("#" + circle.Name).draggable('enable');
+        });
+
+        $scope.circles = $scope.allCircles;
+        $("#" + currentImage).fadeOut(function () {
+            currentImage = "radar";
+            $scope.circles = $scope.allCircles;
+            $("#" + currentImage).fadeIn();
+            $("#circles").fadeIn();
+            $("#mainButtons").fadeIn();
+            makeCirclesDraggable();
+        }); 
+    }
+
+    //used for opening the quadrant view of the circle
+    $scope.openQuadrant = function (imageTag) {
+        //if this was techniques that was clicked 
+        $scope.backToRadar = true; 
+        quadrantOpen = true;
+        $scope.orderForList(false);
+        $("#selectQuadrant").fadeOut();
+        $("#mainButtons").fadeOut();
+        $("#circles").fadeOut();
+        $("#radar").fadeOut(function () {
+            $("#" + imageTag).fadeIn();
+            $("#circles").fadeIn(); 
+            $("#quadrantList").fadeIn();
+            $("#closeQuadrantButton").fadeIn();
+            positionCirclesInQuadrant(imageTag);
+        });
+    }
+
+    function positionCirclesInQuadrant(imageTag) {
+        currentImage = imageTag; 
+        //getting position of the 'middle' of the circle, so bottom right corner for techniques image
+        var middleReference;
+        $scope.quadrantCircles = [];
+        switch (currentImage) {
+            case ('techniques'):
+                middleReference = {
+                    'x': $("#" + currentImage).position().left + $("#" + currentImage).width(),
+                    'y': $("#" + currentImage).position().top + $("#" + currentImage).height()
+                };
+                $scope.quadrantCircles = $scope.techniques;
+                $scope.quadrantList = $scope.techniques;
+                break;
+
+            case ('tools'):
+                middleReference = {
+                    'x': $("#" + currentImage).position().left,
+                    'y': $("#" + currentImage).position().top + $("#" + currentImage).height()
+                };
+                $scope.quadrantCircles = $scope.tools;
+                $scope.quadrantList = $scope.tools;
+                break;
+
+            case ('platforms'):
+                middleReference = {
+                    'x': $("#" + currentImage).position().left + $("#" + currentImage).width(),
+                    'y': $("#" + currentImage).position().top
+                };
+                $scope.quadrantCircles = $scope.platforms;
+                $scope.quadrantList = $scope.platforms;
+                break;
+
+            case ('frameworks'):
+                middleReference = {
+                    'x': $("#" + currentImage).position().left,
+                    'y': $("#" + currentImage).position().top
+                };
+                $scope.quadrantCircles = $scope.laf;
+                $scope.quadrantList = $scope.laf;
+                break;
+        } 
+
+        //keeping all the circles before using the variable
+        $scope.allCircles = $scope.circles;
+        $scope.circles = [];
+
+        $.each($scope.quadrantCircles, function (key, value) {
+            $.each(value, function (index, circle) {
+                findCircleRealPosition(circle, middleReference, true);
+                makeCirclesUndraggable(circle);
+                $("#" + circle.Name).css({ top: circle.realY, left: circle.realX });
+                $scope.circles.push(circle);
+            });
+        });
+        $scope.$apply();
+    }
+
+    //making the circles undraggable, also resizes them to fit the new image
+    function makeCirclesUndraggable(circle) {
+        $("#" + circle.Name).draggable('disable');
+
+        var circleSize = $("#" + circle.Name).width() * 3;
+
+        $("#" + circle.Name).css("width", circleSize);
+        $("#" + circle.Name).css("height", circleSize);
+    }
 };

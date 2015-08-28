@@ -17,13 +17,12 @@
             <form class="search">
                 <input type="text" data-ng-model="nameFilter" placeholder="Search Circles..." data-ng-click="showResults()" />
                 <ul id="searchBar" class="results" style="overflow-x: hidden; overflow-y: auto; max-height: 100px">
-                    <li data-ng-repeat="name in circleNames | filter: nameFilter" data-ng-click="highlightCircle(name)">
-                        <a>{{name}}</a>
+                    <li data-ng-repeat="circle in circles| filter: nameFilter" data-ng-click="highlightCircle(circle.Name)">
+                        <a>{{circle.Name}}</a></li>
                 </ul>
             </form>
         </div>
     </div>
-
     <div id="circleList" style="color: white" hidden>
         <div class="col-md-3 customList" style="text-align: left;">
             <h2>Techniques </h2>
@@ -107,11 +106,12 @@
 
     </div>
 
-    <div style="position: absolute; left: 80vw;">
+    <div style="position: absolute; left: 80vw;" id="mainButtons">
         <button data-ng-show="radarVisible" style="border-top-left-radius: 0; border-top-right-radius: 0; box-shadow: 5px 5px 15px black;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></button>
-        <button data-ng-show="radarVisible" style="border-top-left-radius: 0; border-top-right-radius: 0; box-shadow: 5px 5px 15px black;" type="button" class="btn btn-warning btn-lg" data-ng-click="orderForList()"><i class="fa fa-bars"></i></button>
-        <button data-ng-hide="radarVisible" style="border-top-left-radius: 0; border-top-right-radius: 0; box-shadow: 5px 5px 15px black;" type="button" class="btn btn-warning btn-lg" data-ng-click="orderForList()"><i class="fa fa-times"></i></button>
+        <button data-ng-show="radarVisible" style="border-top-left-radius: 0; border-top-right-radius: 0; box-shadow: 5px 5px 15px black;" type="button" class="btn btn-warning btn-lg" data-ng-click="orderForList(true)"><i class="fa fa-bars"></i></button>
+        <button data-ng-hide="radarVisible" style="border-top-left-radius: 0; border-top-right-radius: 0; box-shadow: 5px 5px 15px black;" type="button" class="btn btn-warning btn-lg" data-ng-click="orderForList(true)"><i class="fa fa-times"></i></button>
     </div>
+    <button data-ng-show="backToRadar" id="closeQuadrantButton" style="border-top-left-radius: 0; border-top-right-radius: 0; box-shadow: 5px 5px 15px black; position: absolute; left: 80vw" type="button" class="btn btn-warning btn-lg" data-ng-click="closeQuadrant()"><i class="fa fa-arrow-left"></i></button>
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
@@ -212,12 +212,53 @@
 
         <img id="bin" src="~/Images/bin.png" style="position: absolute; top: 87vh; left: 85vw; width: 12vh" hidden />
 
-        <div data-ng-repeat="circle in circles">
-            <div data-ng-dblclick="openInfoModal(circle)" id="{{circle.Name}}" class="circle"></div>
+
+        <!--<img id="ping" src="~/Images/radarPing.png" style="height: 86vh; position: absolute;" /> -->
+
+        <div id="circles">
+            <div data-ng-repeat="circle in circles">
+                <div data-ng-dblclick="openInfoModal(circle)" id="{{circle.Name}}" class="circle"></div>
+            </div>
         </div>
 
         <br />
         <img id="radar" src="~/Images/radarImg.png" style="height: 86vh" />
-    </div>   
+
+        <div id="quadrantList" class="col-md-3 customList" style="text-align: left; position: absolute; top: 20vh; left: 10vw" hidden>
+            <h3>Hold</h3>
+            <ul>
+                <li data-ng-repeat="circle in quadrantList.Hold"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+            <h3>Assess</h3>
+            <ul>
+                <li data-ng-repeat="circle in quadrantList.Assess"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+            <h3>Trial</h3>
+            <ul>
+                <li data-ng-repeat="circle in quadrantList.Trial"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+            <h3>Adopt</h3>
+            <ul>
+                <li data-ng-repeat="circle in quadrantList.Adopt"><span data-ng-click="openInfoModal(circle)">{{circle.Name}} </span></li>
+            </ul>
+        </div>
+
+        <img id="techniques" src="~/Images/Techniques.png" style="position: absolute; left: 45vw; height: 83vh; z-index: -1000" hidden />
+        <img id="tools" src="~/Images/Tools.png" style="position: absolute; left: 45vw; height: 83vh; z-index: -1000" hidden />
+        <img id="frameworks" src="~/Images/Frameworks.png" style="position: absolute; left: 45vw; height: 83vh; z-index: -1000" hidden />
+        <img id="platforms" src="~/Images/Platforms.png" style="position: absolute; left: 45vw; height: 83vh; z-index: -1000" hidden />
+
+        <div id="selectQuadrant">
+            <div style="position: absolute; left: 2vw; top: 10vh;">
+                <img class="quadrant" id="techniquesQuad" src="~/Images/topLeft.png" style="height: 10vh;" data-ng-click="openQuadrant('techniques')" />
+                <img class="quadrant2" id="toolsQuad" src="~/Images/topRight.png" style="height: 10vh;" data-ng-click="openQuadrant('tools')" />
+            </div>
+
+            <div style="position: absolute; left: 2vw; top: 20.5vh">
+                <img class="quadrant3" id="platformsQuad" src="~/Images/bottomLeft.png" style="top: 20vh; height: 10vh;" data-ng-click="openQuadrant('platforms')" />
+                <img class="quadrant4" id="frameworksQuad" src="~/Images/bottomRight.png" style="top: 20vh; height: 10vh;" data-ng-click="openQuadrant('frameworks')" />
+            </div>
+        </div>
+    </div>
 
 </div>

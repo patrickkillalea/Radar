@@ -301,9 +301,18 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="Images\bin.png" />
+    <Content Include="Images\bottomLeft.png" />
+    <Content Include="Images\bottomRight.png" />
+    <Content Include="Images\Frameworks.png" />
+    <Content Include="Images\Platforms.png" />
     <Content Include="Images\radarImg.png" />
     <Content Include="Images\radarMiniIcon.ico" />
     <Content Include="Images\radarIcon.png" />
+    <Content Include="Images\radarPing.png" />
+    <Content Include="Images\Techniques.png" />
+    <Content Include="Images\Tools.png" />
+    <Content Include="Images\topLeft.png" />
+    <Content Include="Images\topRight.png" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -331,7 +340,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\tipped.js" />
     <Content Include="Scripts\toastr.min.js" />
-    <Content Include="Storage\savedCircles.xml" />
+    <Content Include="Storage\savedCircles.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
