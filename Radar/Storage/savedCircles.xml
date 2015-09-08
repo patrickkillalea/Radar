@@ -2,8 +2,8 @@
 <ArrayOfCircle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Circle>
     <Name>Pair_Programming</Name>
-    <x>-29.250346260387811</x>
-    <y>-85.2319944598338</y>
+    <x>-38.658453887884271</x>
+    <y>-74.38404159132007</y>
     <Website>www.pairprogramming.com</Website>
     <Description>Pair programming (sometimes referred to as peer programming) is an agile software development technique in which two programmers work as a pair together on one workstation. One, the driver, writes code while the other, the observer, pointer or navigator, reviews each line of code as it is typed in.</Description>
   </Circle>
@@ -16,8 +16,8 @@
   </Circle>
   <Circle>
     <Name>IOS_Adaptivity</Name>
-    <x>-48.23407202216066</x>
-    <y>-47.333795013850413</y>
+    <x>-62.084487534626042</x>
+    <y>-60.630193905817173</y>
     <Website>www.apple.com</Website>
     <Description>Adaptive UI is meant to help rationalize a world with multiple devices, and let developers use a single storyboard in Interface builder to target different aspect ratios, screen sizes, orientations, and display densities.</Description>
   </Circle>
@@ -58,8 +58,8 @@
   </Circle>
   <Circle>
     <Name>LeanKit</Name>
-    <x>21.9226108033241</x>
-    <y>-26.835180055401665</y>
+    <x>5.5791204986149578</x>
+    <y>-17.970914127423825</y>
     <Website>www.leankit.com</Website>
     <Description>LeanKit is a visual project delivery tool that enables teams of all types and across all levels of the organization to apply Lean management principles to their work. Whatever workflow methodology you use — including Kanban, Scrum, Waterfall and anything in between — we help you remove waste and continuously improve.</Description>
   </Circle>
@@ -72,8 +72,8 @@
   </Circle>
   <Circle>
     <Name>MongoBD</Name>
-    <x>78.27216066481995</x>
-    <y>-25.497749307479221</y>
+    <x>76.369507125890735</x>
+    <y>-30.251633016627078</y>
     <Website>www.mongodb.org</Website>
     <Description>MongoDB is a document database that provides high performance, high availability, and easy scalability. Document Database. Documents (objects) map nicely to programming language data types. Embedded documents and arrays reduce need for joins. Dynamic schema makes polymorphism easier.</Description>
   </Circle>
@@ -86,8 +86,8 @@
   </Circle>
   <Circle>
     <Name>Xamarin</Name>
-    <x>54.241689750692522</x>
-    <y>-26.198926592797783</y>
+    <x>51.150534441805227</x>
+    <y>-27.86520190023753</y>
     <Website>www.xamarin.com</Website>
     <Description>Xamarin is a San Francisco, California based software company created in May 2011 by the engineers that created Mono, MonoTouch and Mono for Android which are cross-platform implementations of the Common Language Infrastructure (CLI) and Common Language Specifications (often called Microsoft .NET).</Description>
   </Circle>
@@ -100,15 +100,15 @@
   </Circle>
   <Circle>
     <Name>Visio</Name>
-    <x>36.244806094182827</x>
-    <y>-19.77146814404432</y>
+    <x>33.197714681440445</x>
+    <y>-17.278393351800553</y>
     <Website>www.visio.com</Website>
     <Description>Microsoft Visio is a diagramming and vector graphics application and is part of the Microsoft Office family. The product was first introduced in 1992, made by the Shapeware corporation. It was acquired by Microsoft in 2000.</Description>
   </Circle>
   <Circle>
     <Name>Biztalk</Name>
-    <x>68.144044321329645</x>
-    <y>45.186980609418285</y>
+    <x>58.246527777777779</x>
+    <y>9.0738932291666679</y>
     <Website>www.msdn.com</Website>
     <Description>BizTalk is an industry initiative headed by Microsoft to promote Extensible Markup Language (XML) as the common data exchange language for e-commerce and application integration on the Internet. While not a standards body per se, the group is fostering a common XML message-passing architecture to tie systems together.</Description>
   </Circle>
@@ -177,8 +177,8 @@
   </Circle>
   <Circle>
     <Name>TFS_2015</Name>
-    <x>-31.713123268698062</x>
-    <y>23.169148199445981</y>
+    <x>-23.956890581717452</x>
+    <y>28.432306094182824</y>
     <Website>www.visualstudio.com</Website>
     <Description>Microsoft Visual Studio is an integrated development environment (IDE) from Microsoft. It is used to develop computer programs for Microsoft Windows, as well as web sites, web applications and web services.</Description>
   </Circle>
@@ -198,29 +198,29 @@
   </Circle>
   <Circle>
     <Name>Linux</Name>
-    <x>-45.663088642659275</x>
-    <y>42.347645429362878</y>
+    <x>-56.466412742382268</x>
+    <y>20.740997229916896</y>
     <Website>www.linux.com</Website>
     <Description>An open-source operating system modelled on UNIX.</Description>
   </Circle>
   <Circle>
     <Name>DjangoRest</Name>
-    <x>58.38815789473685</x>
-    <y>20.039819944598339</y>
+    <x>77.83203125</x>
+    <y>17.087131076388889</y>
     <Website>www.djangoproject.com</Website>
     <Description>Django is a free and open source web application framework, written in Python. A web framework is a set of components that helps you to develop websites faster and easier.</Description>
   </Circle>
   <Circle>
     <Name>EmberJS</Name>
-    <x>11.569425207756233</x>
-    <y>13.521468144044322</y>
+    <x>7.0529513888888893</x>
+    <y>12.999131944444445</y>
     <Website>www.emberjs.com</Website>
     <Description>emberjs.com. Free software portal. Ember.js is an open-source JavaScript application framework, based on the model-view-controller (MVC) pattern. It allows developers to create scalable single-page web applications by incorporating common idioms and best practices into the framework.</Description>
   </Circle>
   <Circle>
     <Name>Angular</Name>
-    <x>32.353704986149587</x>
-    <y>24.584487534626039</y>
+    <x>36.344401041666671</x>
+    <y>6.526692708333333</y>
     <Website>www.angularjs.org</Website>
     <Description>AngularJS is a structural framework for dynamic web apps. It lets you use HTML as your template language and lets you extend HTML's syntax to express your application's components clearly and succinctly. Angular's data binding and dependency injection eliminate much of the code you would otherwise have to write.</Description>
   </Circle>
@@ -244,5 +244,12 @@
     <y>11.02406509695291</y>
     <Website>www.microsoft.com</Website>
     <Description>SQL Server is a relational database management system (RDBMS) from Microsoft that's designed for the enterprise environment.</Description>
+  </Circle>
+  <Circle>
+    <Name>PatTest1</Name>
+    <x>-47.953216374269005</x>
+    <y>69.005847953216374</y>
+    <Website>test.com</Website>
+    <Description>test</Description>
   </Circle>
 </ArrayOfCircle>
