@@ -259,4 +259,11 @@
     <Website>test2.com</Website>
     <Description>testing deployment</Description>
   </Circle>  
+  <Circle>
+    <Name>PatTest3</Name>
+    <x>-52.953216374269005</x>
+    <y>68.005847953216374</y>
+    <Website>PatTest3.com</Website>
+    <Description>testing deployment</Description>
+  </Circle> 
 </ArrayOfCircle>
